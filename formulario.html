@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Formulario</title>
 </head>
 <body>
@@ -17,6 +19,7 @@
                <li><a href="formulario.html">Formulario</a></li>
                <li><a href="contacto.html">Contacto</a></li>
         </nav>
+        <h1>Formulario</h1>
         <div class="buscador">
             <form>
               <input type="text" placeholder="Buscar...">
@@ -26,42 +29,45 @@
         <img src="" alt="carrito">
     </header>
     
-        <h1>Formulario</h1>
+        
     <main>
-        <h2>Titulo Curso</h2>
-        <form>
-            <label for="cantidad-personas">Cantidad de personas a inscribir:</label>
-            <input type="number" id="cantidad-personas" name="cantidad-personas" value=""><br><br>
-    
-            <h3>Datos de las personas a inscribir</h3>
-    
-            <label for="persona1-nombre">Nombre:</label>
-            <input type="text" id="persona1-nombre" name="persona1-nombre" required>
-            <label for="persona1-apellido">Apellido:</label>
-            <input type="text" id="persona1-apellido" name="persona1-apellido" required>
-            <label for="persona1-dni">DNI:</label>
-            <input type="text" id="persona1-dni" name="persona1-dni" required><br><br>
-    
-            <label for="persona2-nombre">Nombre:</label>
-            <input type="text" id="persona2-nombre" name="persona2-nombre">
-            <label for="persona2-apellido">Apellido:</label>
-            <input type="text" id="persona2-apellido" name="persona2-apellido">
-            <label for="persona2_dni">DNI:</label>
-            <input type="text" id="persona2-dni" name="persona2-dni"><br><br>
-    
-            <label for="persona3-nombre">Nombre:</label>
-            <input type="text" id="persona3-nombre" name="persona3-nombre">
-            <label for="persona3_apellido">Apellido:</label>
-            <input type="text" id="persona3-apellido" name="persona3-apellido">
-            <label for="persona3-dni">DNI:</label>
-            <input type="text" id="persona3-dni" name="persona3-dni"><br><br>
-    
-            <h3>Importe a pagar:</h3>
-    
-            <p>Importe:</p>
-    
-            <input type="submit" value="Inscribirse">
-        </form>
+        <section>
+            <form>
+                <h2>Titulo Curso</h2>
+                <label for="cantidad-personas">Cantidad de personas a inscribir:</label>
+                <input type="number" id="cantidad-personas" name="cantidad-personas" value=""><br><br>
+        
+                <h3>Datos de las personas a inscribir</h3>
+        
+                <label for="persona1-nombre">Nombre:</label>
+                <input type="text" id="persona1-nombre" name="persona1-nombre" required>
+                <label for="persona1-apellido">Apellido:</label>
+                <input type="text" id="persona1-apellido" name="persona1-apellido" required>
+                <label for="persona1-dni">DNI:</label>
+                <input type="text" id="persona1-dni" name="persona1-dni" required><br><br>
+        
+                <label for="persona2-nombre">Nombre:</label>
+                <input type="text" id="persona2-nombre" name="persona2-nombre">
+                <label for="persona2-apellido">Apellido:</label>
+                <input type="text" id="persona2-apellido" name="persona2-apellido">
+                <label for="persona2_dni">DNI:</label>
+                <input type="text" id="persona2-dni" name="persona2-dni"><br><br>
+        
+                <label for="persona3-nombre">Nombre:</label>
+                <input type="text" id="persona3-nombre" name="persona3-nombre">
+                <label for="persona3_apellido">Apellido:</label>
+                <input type="text" id="persona3-apellido" name="persona3-apellido">
+                <label for="persona3-dni">DNI:</label>
+                <input type="text" id="persona3-dni" name="persona3-dni"><br><br>
+        
+                <h3>Importe a pagar:</h3>
+        
+                <p>Importe:</p>
+        
+                <input type="submit" value="Inscribirse">
+            </form>
+        </section>
+        
     </main>
     
     
@@ -71,6 +77,7 @@
                 <li><p>Leandro Javier Loureiro</p></li>
                 <li><p>Santiago</p></li>
                 <li><p>Jeremias</p></li>
+                <p>&copy; LSJ. Todos los derechos reservados.</p>
             </ul>
             <ul>
                <li><a href="index.html">Inicio</a></li>
@@ -81,11 +88,12 @@
                <li><a href="contacto.html">Contacto</a></li> 
             </ul>
             <ul>
-                <li><a href="www.facebook.com">Facebook</a></li>
-                <li><a href="www.instagram.com">Instagram</a></li>
-                <li><a href="www.youtube.com">Youtube</a></li>
+                <li><a target="_blank" href="www.facebook.com">Facebook</a></li>
+                <li><a target="_blank" href="www.instagram.com">Instagram</a></li>
+                <li><a target="_blank" href="www.youtube.com">Youtube</a></li>
             </ul>
         </footer>
-    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </body>
 </html>

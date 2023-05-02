@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: grey;
+}
+footer{
+    background-color: darkgray;
+}
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    background-color: darkgrey;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+    text-decoration: underline;
+}
+    
+nav{
+    background-color:grey;
+    
+}
+nav li a{
+    color:black;
+    
+}
+
