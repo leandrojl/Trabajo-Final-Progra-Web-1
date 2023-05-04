@@ -4,34 +4,60 @@
 }
 body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: grey;
+    background-color: #242582;
+    color: white;
 }
+header{
+    background-image: url(../img/header-image-white.jpg);
+}
+main{
+    width: 80%;
+    margin: auto;
+}
+
 footer{
-    background-color: darkgray;
+    background-color: white;
+    color: black;
 }
 h1{
+    background-color: #553d67;
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    color: white;
     font-size: 50px;
     font-weight: bold;
+}
+h2{
+    background-color: #F64C72;
+    color: white;
+    
     text-align: center;
-    background-color: darkgrey;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    margin: auto;
+    font-weight: bold;
+   
 }
 a{
     text-decoration: none;
+    padding: 10px;
+    color: black;
+    
 }
 a:hover{
-    color:white;
+    color:#F64C72;
     text-decoration: underline;
+    font-weight: bold;
 }
-    
-nav{
-    background-color:grey;
-    
+li{
+    list-style-type: none;
 }
-nav li a{
-    color:black;
-    
+.contenido-cursos-destacados li{
+    padding: 10px;
+    border: 2px solid black;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    list-style-type: none;
 }
 
