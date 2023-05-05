@@ -10,6 +10,20 @@ body{
 header{
     background-image: url(../img/header-image-white.jpg);
 }
+nav{
+    text-align: center;
+}
+nav li{
+    display: inline-block;
+    padding-left: 50px;
+}
+nav form{
+    display: inline-block;
+    margin-left: 100px;
+}
+nav ul{
+    display: inline-block;    
+}
 main{
     width: 80%;
     margin: auto;
@@ -32,7 +46,7 @@ h1{
 h2{
     background-color: #F64C72;
     color: white;
-    
+    display: block;
     text-align: center;
     margin: auto;
     font-weight: bold;
@@ -49,8 +63,9 @@ a:hover{
     text-decoration: underline;
     font-weight: bold;
 }
-li{
-    list-style-type: none;
+footer a:hover{
+    color:#F64C72;
+    text-decoration:underline;
 }
 .contenido-cursos-destacados li{
     padding: 10px;
@@ -60,4 +75,10 @@ li{
     margin: auto;
     list-style-type: none;
 }
-
+#carrito{
+    
+        width: 80px;
+        margin-left: 100px;
+        
+        
+}
