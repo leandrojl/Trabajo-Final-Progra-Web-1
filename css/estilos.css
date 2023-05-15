@@ -4,11 +4,13 @@
 }
 body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #242582;
-    color: white;
+    background-color: white;
+    color: black;
 }
 header{
     background-image: url(../img/header-image-white.jpg);
+    border-bottom: 3px solid #000;
+    margin-bottom: 10px;
 }
 nav{
     text-align: center;
@@ -16,6 +18,14 @@ nav{
 nav li{
     display: inline-block;
     padding-left: 50px;
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
 }
 nav form{
     display: inline-block;
@@ -24,14 +34,27 @@ nav form{
 nav ul{
     display: inline-block;    
 }
+
 main{
     width: 80%;
     margin: auto;
 }
 
 footer{
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
+    border-top: 3px solid #F64C72;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+footer ul{
+    
+}
+footer li{
+    list-style: none;
 }
 h1{
     background-color: #553d67;
@@ -50,22 +73,10 @@ h2{
     text-align: center;
     margin: auto;
     font-weight: bold;
-   
-}
-a{
-    text-decoration: none;
-    padding: 10px;
-    color: black;
-    
-}
-a:hover{
-    color:#F64C72;
-    text-decoration: underline;
-    font-weight: bold;
 }
 footer a:hover{
     color:#F64C72;
-    text-decoration:underline;
+    
 }
 .contenido-cursos-destacados li{
     padding: 10px;
@@ -76,9 +87,6 @@ footer a:hover{
     list-style-type: none;
 }
 #carrito{
-    
         width: 80px;
-        margin-left: 100px;
-        
-        
+        margin-left: 100px;     
 }
