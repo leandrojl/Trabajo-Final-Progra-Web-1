@@ -76,7 +76,6 @@ footer{
     color: white;
     border-top: 3px solid #F64C72;
 }
-
 footer a{
     color: white;
     text-decoration: none;
@@ -88,24 +87,44 @@ footer li{
     list-style: none;
 }
 h1{
-    background-color: #553d67;
-    width: 50%;
-    padding: 10px;
-    margin: auto;
+    margin: 0;
+    padding: 0;
+    background-color: black;
     text-align: center;
     color: white;
     font-size: 50px;
     font-weight: bold;
 }
-h2{
-    background-color: #F64C72;
-    color: white;
-    display: block;
+/*ESTILOS PARA CONTENIDO INDEX.HTML*/
+.contenedor-instrucciones{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+.contenedor-instrucciones h2{
+    margin: 0; /*Uso esta propiedad para que tome todo el alto del bloque*/
+    grid-row: 1;
+    color: black;
     text-align: center;
-    margin: auto;
     font-weight: bold;
 }
-
+.contenedor-instrucciones ol{
+    margin: 0; /*Utilizo estas propiedades para que el <ol> me tome el ancho y alto del bloque de la fila 2*/
+    padding: 0;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+.contenedor-instrucciones ol li{
+    padding: 50px;
+    border: 2px solid black;
+    background-color: red;
+}
 .contenido-cursos-destacados li{
     padding: 10px;
     border: 2px solid black;
