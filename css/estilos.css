@@ -8,39 +8,70 @@ body{
     color: black;
 }
 header{
-    background-image: url(../img/header-image-white.jpg);
-    border-bottom: 3px solid #000;
-    margin-bottom: 10px;
+    background-color: white;
+    margin-bottom: 20px;
 }
 nav{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
     text-align: center;
+    
+}
+nav > #logo {
+  width: 120px;
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: center;
+}
+nav > form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    grid-row: 1;
+    grid-column: 2;
+}
+nav > #carrito {
+  width: 70px;
+  grid-row: 1;
+  grid-column: 3;
+  justify-self: center;
+}
+nav ul{
+    display: flex; /*Utilizo flex para controlar los elementos dentro del contenedor ul*/
+    justify-content: space-between;
+    grid-row: 2;    /*A su vez, utilizo grid para ubicar al <ul></ul> en la fila 2 y que tome todas las columnas*/
+    grid-column: 1 / 4;
+    background-color: #000;
+    color: white;
+    border-bottom: 3px solid #F64C72;
 }
 nav li{
-    display: inline-block;
-    padding-left: 50px;
+    flex: 1; /*Ajusta los elementos al ancho maximo posible de su contenedor*/
     list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 nav a{
     text-decoration: none;
-    padding: 10px;
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: bold;
 }
-nav form{
-    display: inline-block;
-    margin-left: 100px;
+nav a:hover{
+    color:#F64C72;
+    text-decoration: underline;
 }
-nav ul{
-    display: inline-block;    
-}
-
 main{
     width: 80%;
     margin: auto;
 }
 
 footer{
+    display: flex;
+    flex-wrap: no-wrap;
+    align-items: center;
+    justify-content: space-between;
     background-color: black;
     color: white;
     border-top: 3px solid #F64C72;
@@ -50,8 +81,8 @@ footer a{
     color: white;
     text-decoration: none;
 }
-footer ul{
-    
+footer a:hover{
+    color:#F64C72;
 }
 footer li{
     list-style: none;
@@ -74,10 +105,7 @@ h2{
     margin: auto;
     font-weight: bold;
 }
-footer a:hover{
-    color:#F64C72;
-    
-}
+
 .contenido-cursos-destacados li{
     padding: 10px;
     border: 2px solid black;
@@ -86,7 +114,4 @@ footer a:hover{
     margin: auto;
     list-style-type: none;
 }
-#carrito{
-        width: 80px;
-        margin-left: 100px;     
-}
+
