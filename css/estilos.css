@@ -180,6 +180,7 @@ h1{
 .imagen-container img {
     width: 100%;
     height: 100%;
+    border-bottom: 1px solid black;
     object-fit: cover;
 }  
 .contenido-cursos-destacados li h3 {
@@ -203,4 +204,33 @@ h1{
 .precio-curso{
     color: black;
     font-weight: bold;
+}
+.medios-de-pago {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+.medios-de-pago li{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.medios-de-pago img {
+    width: 120px; /* Ancho deseado */
+    height: 120px;
+    object-fit: contain;
+}
+.imagen-container-calendario{
+    text-align: center;
+    padding: 10px;
+}
+#calendario{
+    width: 60%;
+    justify-self: center;
+}
+.row{
+    display: flex;
+    justify-content: center;
 }
