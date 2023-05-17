@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Comfortaa','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: white;
     color: black;
 }
@@ -15,8 +15,7 @@ nav{
     display: grid;
     grid-template-columns: auto;
     align-items: center;
-    text-align: center;
-    
+    text-align: center;   
 }
 nav > #logo {
   width: 120px;
@@ -39,23 +38,22 @@ nav > #carrito {
 }
 nav ul{
     display: flex; /*Utilizo flex para controlar los elementos dentro del contenedor ul*/
-    justify-content: space-between;
+    justify-content: space-around;
     grid-row: 2;    /*A su vez, utilizo grid para ubicar al <ul></ul> en la fila 2 y que tome todas las columnas*/
     grid-column: 1 / 4;
     background-color: #000;
     color: white;
     border-bottom: 3px solid #F64C72;
+    padding: 10px;
 }
 nav li{
     flex: 1; /*Ajusta los elementos al ancho maximo posible de su contenedor*/
     list-style: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin: 0;
 }
 nav a{
     text-decoration: none;
     color: white;
-    font-size: 20px;
     font-weight: bold;
 }
 nav a:hover{
@@ -69,12 +67,17 @@ main{
 
 footer{
     display: flex;
+    flex-direction: row;
     flex-wrap: no-wrap;
-    align-items: center;
-    justify-content: space-between;
+    align-items:center;
+    text-align: center;
+    justify-content: space-around;
     background-color: black;
     color: white;
     border-top: 3px solid #F64C72;
+}
+footer ul{
+    margin-top: 10px;
 }
 footer a{
     color: white;
@@ -85,15 +88,16 @@ footer a:hover{
 }
 footer li{
     list-style: none;
+    padding: 5px;
 }
 h1{
-    margin: 0;
-    padding: 0;
     background-color: black;
     text-align: center;
     color: white;
     font-size: 50px;
     font-weight: bold;
+    padding: 50px;
+    font-family: 'Comfortaa';
 }
 /*ESTILOS PARA CONTENIDO INDEX.HTML*/
 .contenedor-instrucciones{
@@ -125,12 +129,78 @@ h1{
     border: 2px solid black;
     background-color: red;
 }
-.contenido-cursos-destacados li{
-    padding: 10px;
-    border: 2px solid black;
-    width: 50%;
-    text-align: center;
-    margin: auto;
-    list-style-type: none;
+.contenido-cursos-destacados{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 }
-
+.contenido-cursos-destacados h2 {
+    grid-row: 1; /* El encabezado ocupa las 3 columnas */
+    text-align: center;
+    align-items: center; /*Acomoda el contenido en el eje transversal del bloque*/
+    padding: 10px;
+    font-weight: bold;
+}
+.contenido-cursos-destacados ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Crea 3 columnas de igual tamaño */
+    grid-template-rows: 1fr; /* Ajusta automáticamente la altura de las filas */
+    gap: 10px; /* Espacio entre los elementos */
+    text-align: center;
+    
+}
+@media (max-width: 1155px) {
+    .contenido-cursos-destacados ul {
+      grid-template-columns: repeat(4, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
+    }
+  }
+  @media (max-width: 983px) {
+    .contenido-cursos-destacados ul {
+      grid-template-columns: repeat(3, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
+    }
+  }
+@media (max-width: 822px) {
+    .contenido-cursos-destacados ul {
+      grid-template-columns: repeat(2, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
+    }
+  }
+.contenido-cursos-destacados li{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: 2px solid black;
+    list-style-type: none;
+   
+    
+}
+.imagen-container{
+    width: 100%;
+    height: 100%;
+}
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  
+.contenido-cursos-destacados li h3 {
+    font-weight: bold;
+    font-size: 100%; /* Tamaño inicial del font */
+    transition: font-size 0.3s; /* Agrega una transición suave al cambiar el tamaño del font */
+  }
+.contenido-cursos-destacados ul li > * {
+    margin-bottom: 10px; /* Ajusta el valor según el espacio deseado */
+}
+.contenido-cursos-destacados button {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+.contenido-cursos-destacados button a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.precio-curso{
+    color: black;
+    font-weight: bold;
+}
