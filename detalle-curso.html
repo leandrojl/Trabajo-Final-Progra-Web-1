@@ -15,47 +15,42 @@
     <header>
         <nav>
             <img id="logo" src="img/logo-world.jfif" alt="logo">
-            
-            
             <form>
                 <input type="text" placeholder="Buscar...">
                 <button type="submit">Buscar</button>
             </form>  
             <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
-
-            <ul>
-               
+            <ul>  
                 <li><a href="index.html">Inicio</a></li>
                 <li><a  href="detalle-curso.html">Cursos</a></li>
                 <li><a  href="calendario.html">Calendario</a></li>
                 <li><a  href="gift-card.html">Gift Card</a></li>
                 <li><a  href="formulario.html">Formulario</a></li>
-                <li><a  href="contacto.html">Contacto</a></li>
-                
-             </ul>
-              
-        </nav>
-        
+                <li><a  href="contacto.html">Contacto</a></li>  
+             </ul>   
+        </nav> 
     </header>
-    
     <main>
-        <h1>Detalle de Cursos</h1>
-        <section>
-            <article>
-                <img src="" alt="image-del-curso">
-                <h2>Titulo del curso</h2>
-                <p>Precio:</p>
-                <p>Tiempo de dedicacion necesario:</p>
-                <p>Descripcion del curso:</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim at dolor, 
-                        cumque corrupti id libero repellat natus consectetur ducimus, 
-                        tenetur iste velit in unde? Doloribus et minus nemo sint tempora!</p>
-                        <p>Requisitos previos:</p>
-                <button><a href="#">Inscribirse</a></button>
-            </article>
-            <article>
-                <h4>Contenido por clase:</h4>
-                <ol>
+        <h1>Detalle de Curso</h1>
+        <section id="columna-detalle-curso">
+            <article id="imagen-titulo-descripcion-curso">
+                <img src="img/clase-js.png" alt="image-del-curso">
+                <div class="contenido-titulo-curso-precio-tiempo-descripcion">
+                    <h2>Javascript Fundamentals</h2>
+                    <p>Precio: <span class="precio-curso">US$30</span> </p>
+                    <p>Tiempo de dedicacion necesario: <span class="precio-curso">40hs</span> </p>
+                    <p>Descripcion del curso:</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim at dolor, 
+                            cumque corrupti id libero repellat natus consectetur ducimus, 
+                            tenetur iste velit in unde? Doloribus et minus nemo sint tempora!</p>
+                            <p>Requisitos previos: <span class="precio-curso">Ninguno</span></p>
+                    <button><a href="#">Inscribirse</a></button>
+                </div>
+                
+                </article>
+                <div class="contenido-curso-unidades">
+                    <h4>Contenido por clase:</h4>
+                <ul>
                     <li>
                         <h3>INTRODUCCION:</h3>
                         <p>Video 1</p>
@@ -81,11 +76,12 @@
                         <p>Video 2</p>
                         <p>Duracion:</p>
                         <p>Examen:</p>
-                        <p>Duracion:</p>>
+                        <p>Duracion:</p>
                     </li>
-                </ol>
-            </article>
-            <article>
+                </div>
+                
+                </ul>
+                <div class="docente-curso-descripcion">
                     <h3>Docente del curso:</h3>
                     <img src="" alt="imagen-docente">
                     <p>Nombre:</p>
@@ -96,36 +92,62 @@
                         Explicabo consectetur placeat doloremque assumenda optio veniam sunt? Nobis, 
                         odit expedita architecto atque vitae molestias rerum, 
                         ex perferendis maiores itaque in laboriosam?</p>
+                </div>
+                    
             </article>
         </section>
         <aside>
-            <h5>Cursos relacionados:</h5>
+            <article class="contenido-cursos-destacados">
+                <h2>Cursos destacados:</h2>
             <ul>
                 <li>
-                    <h6>Nombre del Curso 1:</h6>
-                    <p>Duración aproximada:</p>
-                    <p>Precio:</p>
-                    <button><a href="#">Ver Detalle</a></button>
+                    <div class="imagen-container">
+                        <img src="img/clase-java2.png" alt="clase-java">
+                    </div>
+                  <h3>Java Fundamentals</h3>
+                  <p>Duración aproximada: 12hs</p>
+                  <p class="precio-curso">US$ 40</p>
+                  <button><a href="#">Comprar</a></button>
+                </li>
+                <li>
+                    <div class="imagen-container">
+                        <img src="img/clase-js.png" alt="clase-javascript">
+                    </div>
+                    
+                  <h3>FullStack Javascript</h3>
+                  <p>Duración aproximada: 24hs</p>
+                  <p class="precio-curso">US$ 400</p>
+                  <button><a href="#">Comprar</a></button>
+                </li>
+                <li>
+                    <div class="imagen-container">
+                        <img src="img/python-logo3.jpg" alt="python-logo">
+                    </div>
+                    <h3>Python Fundamentals</h3>
+                    <p>Duración aproximada: 12hs</p>
+                    <p class="precio-curso">US$ 20</p>
+                    <button><a href="#">Comprar</a></button>
                   </li>
                   <li>
-                    <h6>Nombre del Curso 2:</h6>
-                    <p>Duración aproximada:</p>
-                    <p>Precio:</p>
-                    <button><a href="#">Ver Detalle</a></button>
+                    <div class="imagen-container">
+                        <img src="img/htmlcssjs-curso.jpg" alt="html-css-js-foto">
+                    </div>
+                    <h3>FrontEnd Fundamentals</h3>
+                    <p>Duración aproximada: 48hs</p>
+                    <p class="precio-curso">US$ 120</p>
+                    <button><a href="#">Comprar</a></button>
                   </li>
                   <li>
-                    <h6>Nombre del Curso 3:</h6>
-                    <p>Duración aproximada:</p>
-                    <p>Precio:</p>
-                    <button><a href="#">Ver Detalle</a></button>
+                    <div class="imagen-container">
+                        <img src="img/c++logo.jpg" alt="c++-imagen">
+                    </div>
+                    <h3>C++ Intermedio</h3>
+                    <p>Duración aproximada: 72hs</p>
+                    <p class="precio-curso">US$ 200</p>
+                    <button><a href="#">Comprar</a></button>
                   </li>
-                  <li>
-                    <h6>Nombre del Curso 4:</h6>
-                    <p>Duración aproximada:</p>
-                    <p>Precio:</p>
-                    <button><a href="#">Ver Detalle</a></button>
-                  </li>
-            </ul>
+              </ul>
+            </article>
         </aside>
             
     </main>
