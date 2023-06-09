@@ -14,6 +14,7 @@ header{
 nav{
     display: grid;
     grid-template-columns: auto;
+    grid-template-rows: auto auto;
     align-items: center;
     text-align: center;   
 }
@@ -33,14 +34,21 @@ nav > form {
 nav > #carrito {
   width: 70px;
   grid-row: 1;
-  grid-column: 3;
+  grid-column: 4;
   justify-self: center;
+}
+nav> #cursosObtenidos{
+    margin: 0;
+    grid-row: 1;
+    grid-column: 3;
+    font-weight: bold;   
+    justify-self: center;
 }
 nav ul{
     display: flex; /*Utilizo flex para controlar los elementos dentro del contenedor ul*/
     justify-content: space-around;
     grid-row: 2;    /*A su vez, utilizo grid para ubicar al <ul></ul> en la fila 2 y que tome todas las columnas*/
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
     background-color: #000;
     color: white;
     border-bottom: 3px solid #F64C72;
