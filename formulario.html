@@ -33,30 +33,21 @@
         <h1>Formulario</h1>
         <section>
             <form class="formulario-ingreso-curso">
-                <h2>Titulo Curso</h2>
-                <h3>Datos:</h3>
                 <div class="ingreso-datos-persona">
-                <label for="persona1-nombre">Nombre:</label>
-                <input type="text" id="persona1-nombre" name="persona1-nombre" required>
-                <label for="persona1-apellido">Apellido:</label>
-                <input type="text" id="persona1-apellido" name="persona1-apellido" required>
-                <label for="persona1-dni">DNI:</label>
-                <input type="text" id="persona1-dni" name="persona1-dni" required>
-                </div>
-                <div class="ingreso-datos-persona1">
-                    <label for="persona2-nombre">Nombre:</label>
-                    <input type="text" id="persona2-nombre" name="persona2-nombre" required>
-                    <label for="persona2-apellido">Apellido:</label>
-                    <input type="text" id="persona1-apellido" name="persona2-apellido" required>
-                    <label for="persona1-dni">DNI:</label>
-                    <input type="text" id="persona2-dni" name="persona2-dni" required> 
-                    </div>
-                <h4>Importe:</h4>
-                <div class="importe-a-pagar">
-                <p>US$ 500</p>
-                <input class="estilo-boton-grueso" type="submit" value="Inscribirse">
-                </div>  
+                <label for="nombre-formulario">Nombre:</label>
+                <input type="text" id="nombre-formulario" name="nombre-formulario" >
+                <label for="apellido-formulario">Apellido:</label>
+                <input type="text" id="apellido-formulario" name="apellido-formulario" >
+                <label for="dni-formulario">DNI:</label>
+                <input type="text" id="dni-formulario" name="dni-formulario" >
+                <label for="email-formulario">Email:</label>
+                <input type="text" id="email-formulario" name="email-formulario" >
+                <label for="telefono-formulario">Telefono:</label>
+                <input type="text" id="telefono-formulario" name="telefono-formulario" >
+                <input type="submit" value="Enviar">
+                </div> 
             </form>
+            <div id="mensajeError"></div>
         </section>
     </main>
         <footer>
@@ -80,5 +71,6 @@
                 <li><a target="_blank" href="www.youtube.com">Youtube</a></li>
             </ul>
         </footer>
+        <script src="js/javascript.js"></script>
         </body>
 </html>
