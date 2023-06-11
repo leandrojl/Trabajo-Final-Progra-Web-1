@@ -37,7 +37,7 @@ nav > #carrito {
   grid-column: 4;
   justify-self: center;
 }
-nav> #cursosObtenidos{
+nav> #detalleCursos{
     margin: 0;
     grid-row: 1;
     grid-column: 3;
