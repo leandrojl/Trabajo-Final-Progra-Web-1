@@ -429,30 +429,38 @@ h1{
 
 /*PRINCIPIO ESTILOS CONTACTO.HTML*********************************************************************************************************/
 .contenedor-contacto{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    gap: 40px;
-    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .formulario-contacto{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
 }
+.formulario-contacto input[type="text"],
+.formulario-contacto input[type="email"],
+.formulario-contacto input[type="tel"] {
+  width: 400px;
+}
+
+.formulario-contacto textarea {
+    width: 300px;
+    height: 100px;
+  }
 .formulario-contacto label{
-    display: block;
-    grid-column: 1;
+    margin-bottom: 10px;
+    
 }
 .formulario-contacto input{
-    display: block;
-    grid-column: 2;
+    margin-bottom: 10px;
+    
 }
-.formulario-contacto textarea{
-    display: block;
-    grid-column: 2;
-}
+
 .ubicacion{
     display: flex;
     flex-direction: column;
@@ -475,6 +483,7 @@ h1{
    padding: 10px;
 }
 #boton-enviar-formulario-contacto{
+    width: 100px;
     margin-top: 20px;
 }
 /*FIN ESTILOS CONTACTO.HTML*********************************************************************************************************/
