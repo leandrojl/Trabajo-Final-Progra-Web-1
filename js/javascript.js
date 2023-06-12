@@ -1,5 +1,5 @@
 //FORMULARIO HTML
-class Formulario {
+class FormularioInscripcionAUnCurso {
     constructor() {
       this.nombre = '';
       this.apellido = '';
@@ -10,11 +10,11 @@ class Formulario {
     }
   
     obtenerDatos() {
-      this.nombre = document.getElementById('nombre-formulario').value;
-      this.apellido = document.getElementById('apellido-formulario').value;
-      this.dni = document.getElementById('dni-formulario').value;
-      this.email = document.getElementById('email-formulario').value;
-      this.telefono = document.getElementById('telefono-formulario').value;
+      this.nombre = document.getElementById('nombre-formulario-ingreso-curso').value;
+      this.apellido = document.getElementById('apellido-formulario-ingreso-curso').value;
+      this.dni = document.getElementById('dni-formulario-ingreso-curso').value;
+      this.email = document.getElementById('email-formulario-ingreso-curso').value;
+      this.telefono = document.getElementById('telefono-formulario-ingreso-curso').value;
       this.mensajeError = document.querySelector('#mensajeError');
     }
   
@@ -36,6 +36,17 @@ class Formulario {
         if(this.email==""){
             error=true;
             mensaje+="<p>El campo email no puede estar vacio</p>";
+        }else{
+            this.validarEmail(this.email);
+            if (this.validarEmail(this.email)) {
+                
+                console.log('Correo electrónico válido:', this.email);
+               
+              } else {
+                error=true;
+                console.log('Correo electrónico inválido:', this.email);
+                mensaje+="<p>El campo email es invalido</p>";
+              }
         }
         if(this.telefono==""){
             error=true;
@@ -49,6 +60,11 @@ class Formulario {
         }else{
             return true;
         }
+    }
+
+    validarEmail(email){
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
   
     enviarDatos() {
@@ -67,7 +83,7 @@ class Formulario {
     }
   }
   
-const miFormulario = new Formulario();
+const miFormulario = new FormularioInscripcionAUnCurso();
   
  document.querySelector('.formulario-ingreso-curso').addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
