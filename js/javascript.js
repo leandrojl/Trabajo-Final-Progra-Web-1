@@ -180,6 +180,27 @@ class FormularioContacto {
       
     }
   }
+//VALIDACION DE TEXTAREA
+    const textarea = document.getElementById('consulta-formulario-contacto');
+    const caracteresIngresados = document.getElementById('caracteres-ingresados');
+    const caracteresRestantes = document.getElementById('caracteres-restantes');
+    const limiteCaracteres = 1000;
+
+  // Agregar evento de escucha al campo de texto
+    textarea.addEventListener('input', function() {
+    const texto = textarea.value;
+    const longitud = texto.length;
+    const caracteresRestantesValor = limiteCaracteres - longitud;
+
+    // Actualizar la cantidad de caracteres ingresados y restantes
+    caracteresIngresados.textContent = longitud;
+    caracteresRestantes.textContent = caracteresRestantesValor;
+
+    // Limitar la longitud del campo de texto
+    if (longitud > limiteCaracteres) {
+      textarea.value = texto.substring(0, limiteCaracteres);
+    }
+  });
   
  const formularioContacto = new FormularioContacto();
   
