@@ -82,14 +82,6 @@ class FormularioInscripcionAUnCurso {
       
     }
   }
-  
-// const miFormulario = new FormularioInscripcionAUnCurso();
-  
-//  document.querySelector('.formulario-ingreso-curso').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Evitar el envío del formulario por defecto
-//     miFormulario.obtenerDatos(); // Obtener los datos del formulario
-//     miFormulario.enviarDatos(); // Enviar los datos del formulario
-// });
 
 //FORMULARIO HTML-----------------------------------------------------------------------------------------------------------------------
 
@@ -129,7 +121,6 @@ class FormularioContacto {
             error=true;
             mensaje+="<p>El campo email no puede estar vacio</p>";
         }else{
-            this.validarEmail(this.email);
             if (this.validarEmail(this.email)) {
                 console.log('Correo electrónico válido:', this.email);
               } else {
@@ -141,6 +132,15 @@ class FormularioContacto {
         if(this.telefono==""){
             error=true;
             mensaje+="<p>El campo telefono no puede estar vacio</p>";
+         }else{
+             
+             if(this.validarTelefono(this.telefono)){
+                 console.log('Telefono válido:', this.telefono);
+             }else{
+                error=true;
+                console.log('Telefono inválido:', this.telefono);
+                mensaje+="<p>El campo telefono es invalido</p>";
+             }
         }
         if(this.consulta==""){
             error=true;
@@ -155,9 +155,15 @@ class FormularioContacto {
     }
 
     validarEmail(email){
+        //regexEmail= /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     }
+
+    validarTelefono(telefono){
+         const regex = /^[0-9]{4}-?\d{4}$/; //Se permiten 4 numeros, guion opcional y 4 numeros mas. Ej: 4444-4444, 44444444
+         return regex.test(telefono);
+     }
   
     enviarDatos() {
       if (this.validarDatos()) {
@@ -182,6 +188,15 @@ class FormularioContacto {
     formularioContacto.obtenerDatos(); // Obtener los datos del formulario
     formularioContacto.enviarDatos(); // Enviar los datos del formulario
   });
+
+// const miFormulario = new FormularioInscripcionAUnCurso();
+  
+// document.querySelector('.formulario-ingreso-curso').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Evitar el envío del formulario por defecto
+//     miFormulario.obtenerDatos(); // Obtener los datos del formulario
+//     miFormulario.enviarDatos(); // Enviar los datos del formulario
+// });
   // //CONTACTO.HTML-----------------------------------------------------------------------------------------------------------------------
 
+  
 

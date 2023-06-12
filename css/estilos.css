@@ -425,6 +425,10 @@ h1{
     margin: 10px; 
   }
 
+  #mensajeErrorFormulario{
+    color: red;
+}
+
 /*FIN ESTILOS FORMULARIO.HTML*********************************************************************************************************/
 
 /*PRINCIPIO ESTILOS CONTACTO.HTML*********************************************************************************************************/
@@ -472,11 +476,13 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-row: 2;
-    grid-column: span 2;
     margin-top: 40px;
 }
 .datos-contacto ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     list-style: none;
 }
 .datos-contacto li{
@@ -485,6 +491,9 @@ h1{
 #boton-enviar-formulario-contacto{
     width: 100px;
     margin-top: 20px;
+}
+#mensajeErrorContacto{
+    color: red;
 }
 /*FIN ESTILOS CONTACTO.HTML*********************************************************************************************************/
 
