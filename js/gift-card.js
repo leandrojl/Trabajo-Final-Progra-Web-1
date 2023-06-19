@@ -2,6 +2,7 @@ class GiftCard {
 
     constructor() {
       this.inputTitulo = '';
+      this.inputFechaHora = '';
       this.inputColorLetra = '';
       this.inputTamanioLetra = '';
       this.inputFuente = '';
@@ -13,6 +14,7 @@ class GiftCard {
   
     obtenerDatos() {
       this.inputTitulo = document.getElementById('titulo').value;
+      this.inputFechaHora = document.getElementById('fecha-hora').value;
       this.inputColorLetra = document.getElementById('color-letra').value;
       this.inputTamanioLetra = document.getElementById('tamanio-letra').value;
       this.inputFuente = document.getElementById('fuente').value;
@@ -28,25 +30,36 @@ class GiftCard {
 
     }
 
+    actualizarFechaYHora() {
+        const fechaPrevisualizacion = document.querySelector('#fecha-hora-gift-card');
+        fechaPrevisualizacion.textContent = this.inputFechaHora;
+      }
+
     actualizarColorLetra() {
         const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
         const montoPrevisualizacion = document.querySelector('#monto-gift-card');
+        const fechaPrevisualizacion = document.querySelector('#fecha-hora-gift-card');
         tituloPrevisualizacion.style.color = this.inputColorLetra;
         montoPrevisualizacion.style.color = this.inputColorLetra;
+        fechaPrevisualizacion.style.color = this.inputColorLetra;
       }
   
     actualizarTamanioLetra() {
       const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
       const montoPrevisualizacion = document.querySelector('#monto-gift-card');
+      const fechaPrevisualizacion = document.querySelector('#fecha-hora-gift-card');
       tituloPrevisualizacion.style.fontSize = this.inputTamanioLetra+ 'px';
       montoPrevisualizacion.style.fontSize = this.inputTamanioLetra+ 'px';
+      fechaPrevisualizacion.style.fontSize = this.inputTamanioLetra+ 'px';
     }
 
     actualizarFuente() {
       const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
       const montoPrevisualizacion = document.querySelector('#monto-gift-card');
+      const fechaPrevisualizacion = document.querySelector('#fecha-hora-gift-card');
       tituloPrevisualizacion.style.fontFamily = this.inputFuente;
       montoPrevisualizacion.style.fontFamily = this.inputFuente;
+      fechaPrevisualizacion.style.fontFamily = this.inputFuente;
     }
   
     actualizarMonto() {
@@ -59,12 +72,20 @@ class GiftCard {
       contenedorPrevisualizacion.style.backgroundColor = this.inputColorFondo;
     }
   }
+
   const giftCard = new GiftCard();
 
   const tituloInput = document.getElementById('titulo');
   tituloInput.addEventListener('input', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarTitulo();
+});
+
+const fechaHoraInput = document.getElementById('fecha-hora');
+
+fechaHoraInput.addEventListener('change', () => {
+  giftCard.obtenerDatos();
+  giftCard.actualizarFechaYHora();
 });
 
 const colorLetra = document.getElementById('color-letra');
