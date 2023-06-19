@@ -364,35 +364,47 @@ h1{
 .contenedor-imagen-article{
     margin: 40px;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
 }
-.contenedor-imagen-article h2{
+#contenedor-personalizado{
+    grid-column: 1 / 2;
+    width: 1fr;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+@media (max-width: 1155px) {
+    .contenedor-imagen-article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #contenedor-personalizado{
+        height: 300px;
+        width: 100%;
+
+        border: 2px solid black;
+    
+    }
+    
+  }
+#articulo-botones-personalizacion-gift-card{
     grid-column: 2;
-    grid-row: 1;
-    
-}
-.contenedor-imagen-article img{
-    grid-column: 1;
-    grid-row: 1;
-    width: 80%;
-    height: auto;
-    margin: auto;
-    
-}
-.contenedor-imagen-article ul{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     list-style: none;
     padding: 10px;
-    
 }
 .contenedor-imagen-article li{
     display: flex;
     align-items: center;
-    margin: 10px;
-      
+    margin: 10px;   
 }
 .contenedor-imagen-article li > *{
     padding: 5px;  
