@@ -421,6 +421,18 @@ h1{
 /*FIN ESTILOS GIFT-CARD.HTML*********************************************************************************************************/
 
 /*PRINCIPIO ESTILOS FORMULARIO.HTML*********************************************************************************************************/
+#contenedor-botones-agregar-borrar-formulario{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#contenedor-botones-agregar-borrar-formulario > * {
+    
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
 .formulario-ingreso-curso{
     display: flex;
     flex-direction: row;
