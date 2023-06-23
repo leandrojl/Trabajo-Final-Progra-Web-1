@@ -83,13 +83,15 @@ class FormularioInscripcionAUnCurso {
     }
   }
 
- const miFormulario = new FormularioInscripcionAUnCurso();
+const miFormulario = new FormularioInscripcionAUnCurso();
   
 document.querySelector('.formulario-ingreso-curso').addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
     miFormulario.obtenerDatos(); // Obtener los datos del formulario
     miFormulario.enviarDatos(); // Enviar los datos del formulario
 });
+
+
 
 
   
