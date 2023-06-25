@@ -160,9 +160,9 @@ h1{
     padding: 10px;
     font-weight: bold;
 }
-.contenido-cursos-destacados ul {
+#contenedor-cursos-destacados {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Crea 3 columnas de igual tamaño */
+    grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas de igual tamaño */
     grid-template-rows: 1fr; /* Ajusta automáticamente la altura de las filas */
     gap: 10px; /* Espacio entre los elementos */
     text-align: center;
@@ -183,7 +183,7 @@ h1{
       grid-template-columns: repeat(2, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
     }
   }
-.contenido-cursos-destacados li{
+ .tarjeta-curso{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
