@@ -49,8 +49,15 @@ function mostrarCursos(cursos) {
     precio.textContent = curso.precio;
     const button = document.createElement('button');
     button.textContent = 'Ver mas';
+    button.className = 'estilo-boton';
     button.addEventListener("click", function(){
-        mostrarDetalleCurso(curso, curso.id);
+        mostrarDetalleCurso(curso);
+    })
+    const buttonComprar = document.createElement('button');
+    buttonComprar.textContent = 'Comprar';
+    buttonComprar.className = 'estilo-boton';
+    buttonComprar.addEventListener('click', function(){
+        comprarCurso(curso)
     })
 
     imagenContainer.appendChild(imagen);
@@ -58,14 +65,42 @@ function mostrarCursos(cursos) {
     li.appendChild(h3);
     li.appendChild(duracion);
     li.appendChild(precio);
+    li.appendChild(buttonComprar);
     li.appendChild(button);
     cursosContainer.appendChild(li);
   });
 }
+const contador = document.getElementById('contador-cursos');
+
+function cargarContadorDeCursos(){
+    
+    if (sessionStorage.getItem('contadorCursos')) {
+    // Obtener el valor almacenado en el sessionStorage
+    contador.textContent = sessionStorage.getItem('contadorCursos');
+  } else {
+    // Si no hay un contador almacenado, iniciar en 0
+    contador.textContent = '0';
+  }
+}
+window.onload =  cargarContadorDeCursos;
 
 
+function comprarCurso(curso){
 
-function mostrarDetalleCurso(curso, curso_id) {
+    let valorActual = parseInt(contador.textContent);
+
+  // Incrementar el valor del contador
+  valorActual++;
+
+  // Actualizar el contador en la página
+  contador.textContent = valorActual;
+
+  // Almacenar el valor actualizado en el sessionStorage
+  sessionStorage.setItem('contadorCursos', valorActual);
+
+}
+
+function mostrarDetalleCurso(curso) {
 
     
     // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
@@ -90,7 +125,8 @@ function mostrarDetalleCurso(curso, curso_id) {
                 <form>
                     <input type="text" placeholder="Buscar...">
                     <button type="submit">Buscar</button>
-                </form>                
+                </form>
+                <p>Carrito Compras: <span id="contador-cursos"></span></p>                
                 <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
                 <ul>  
                     <li><a href="index.html">Inicio</a></li>
@@ -102,6 +138,16 @@ function mostrarDetalleCurso(curso, curso_id) {
         </header>
         <main>
             <h1>Detalle de Curso</h1>
+            <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Felicitaciones!</h2>
+              <p>Te has inscrito en el evento:</p>
+              <p id="eventoTitulo">Titulo: ${curso.titulo}</p>
+              <p id="eventoPrecio">Precio: ${curso.precio}</p>
+              <p id="eventoDuracion">${curso.duracion}</p>
+            </div>
+            </div>
             <section id="columna-detalle-curso">
                 <article id="imagen-titulo-descripcion-curso">
                     <img src="${curso.imagen}" alt="image-del-curso">
@@ -114,7 +160,7 @@ function mostrarDetalleCurso(curso, curso_id) {
                                 cumque corrupti id libero repellat natus consectetur ducimus, 
                                 tenetur iste velit in unde? Doloribus et minus nemo sint tempora!</p>
                                 <p>Requisitos previos: <span class="precio-curso">Ninguno</span></p>
-                        <button id="botonInscribirCurso"><a href="#">Inscribirse</a></button>
+                        <button id="botonInscribirCurso" class="estilo-boton">Inscribirse</button>
                     </div>
                     </article>
                     <div class="contenido-curso-unidades">
@@ -151,19 +197,16 @@ function mostrarDetalleCurso(curso, curso_id) {
                     </ul>
                     <div class="docente-curso-descripcion">
                         <h3>Docente del curso:</h3>
-                        <img src="img/contact-photo.jpg" alt="imagen-docente">
+                        <img src="${curso.docente.imagen}" alt="imagen-docente">
                         <div class="datos-docente">
-                            <p>Nombre: Humberto</p>
-                            <p>Apellido: Flores</p>
-                            <p>Valoracion: 100%</p>
+                            <p>Nombre: ${curso.docente.nombre}</p>
+                            <p>Apellido: ${curso.docente.apellido}</p>
+                            <p>Valoracion: ${curso.docente.valoracion}</p>
                             <p>Extracto:</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Explicabo consectetur placeat doloremque assumenda optio veniam sunt? Nobis, 
-                                odit expedita architecto atque vitae molestias rerum, 
-                                ex perferendis maiores itaque in laboriosam?</p>
+                            <p>${curso.docente.extracto}</p>
                         </div>  
                     </div>    
-                </article>
+                
             </section>
             <aside>
                 <article class="contenido-cursos-destacados">
@@ -177,7 +220,7 @@ function mostrarDetalleCurso(curso, curso_id) {
                 <ul>
                     <li><p>Leandro Javier Loureiro</p></li>
                     <li><p>Santiago Ruiz Lenz</p></li>
-                    <li><p>Jeremias Medina</p></li>
+                    
                     <p>&copy; LSJ. Todos los derechos reservados.</p>
                 </ul>
                 <ul>
@@ -202,3 +245,5 @@ function mostrarDetalleCurso(curso, curso_id) {
     nuevaVentana.document.write(htmlDetalleCurso);
     nuevaVentana.document.close();
   }
+
+
