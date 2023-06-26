@@ -1,60 +1,70 @@
 {
     "cursos": [
         {
+            "id": 1,
             "imagen": "img/nodejs-logo.jpg",
             "titulo": "NodeJS Avanzado",
             "duracion": "Duración: 90hs",
             "precio": "US$ 320"
           },
           {
+            "id": 2,
             "imagen": "img/clase-java2.png",
             "titulo": "Java Fundamentals",
             "duracion": "Duración: 12hs",
             "precio": "US$ 320"
           },
           {
+            "id": 3,
             "imagen": "img/clase-js.png",
             "titulo": "FullStack Javascript",
             "duracion": "Duración: 240hs",
             "precio": "US$ 400"
           },
           {
+            "id": 4,
             "imagen": "img/python-logo3.jpg",
             "titulo": "Python Fundamentals",
             "duracion": "Duración: 12hs",
             "precio": "US$ 20"
           },
           {
+            "id": 5,
             "imagen": "img/htmlcssjs-curso.jpg",
             "titulo": "Front End ",
             "duracion": "Duración: 48hs",
             "precio": "US$ 120"
           },
           {
+            "id": 6,
             "imagen": "img/c++logo.jpg",
             "titulo": "C++ Intermedio",
             "duracion": "Duración: 72hs",
             "precio": "US$ 200"
           },
           {
+            "id": 7,
             "imagen": "img/clase-js.png",
             "titulo": "JS Fundamentals",
             "duracion": "Duración: 120hs",
             "precio": "US$ 30"
           },
           {
+            "id": 8,
             "imagen": "img/react-logo.jpg",
             "titulo": "React Avanzado",
             "duracion": "Duración: 100hs",
             "precio": "US$ 220"
           },
           {
+            "id": 9,
             "imagen": "img/php-logo.jpg",
             "titulo": "PHP Intermedio",
             "duracion": "Duración: 30hs",
             "precio": "US$ 100"
           },
           {
+            "id": 10,
             "imagen": "img/mysql-logo.jpg",
             "titulo": "MySQL Completo",
             "duracion": "Duración: 130hs",

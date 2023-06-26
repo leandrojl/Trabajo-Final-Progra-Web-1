@@ -30,9 +30,9 @@ function mostrarCursos(cursos) {
   const cursosContainer = document.getElementById('contenedor-cursos-destacados');
 
   cursos.forEach(curso => {
-    const a = document.createElement('a');
-    a.href = 'detalle-curso.html';
-    a.target = '_blank';
+    
+    
+    
     const li = document.createElement('li');
     li.className = 'tarjeta-curso';
     const imagenContainer = document.createElement('div');
@@ -47,22 +47,29 @@ function mostrarCursos(cursos) {
     const precio = document.createElement('p');
     precio.className = 'precio-curso';
     precio.textContent = curso.precio;
+    const button = document.createElement('button');
+    button.textContent = 'Ver mas';
+    button.addEventListener("click", function(){
+        mostrarDetalleCurso(curso, curso.id);
+    })
 
-    a.appendChild(imagen);
-    imagenContainer.appendChild(a);
+    imagenContainer.appendChild(imagen);
     li.appendChild(imagenContainer);
     li.appendChild(h3);
     li.appendChild(duracion);
     li.appendChild(precio);
+    li.appendChild(button);
     cursosContainer.appendChild(li);
   });
 }
 
-function mostrarDetalleCurso() {
-    const cursoDetalleContainer = document.getElementById('curso-detalle-container');
+
+
+function mostrarDetalleCurso(curso, curso_id) {
+
     
     // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
-    const contenidoCursoDetalle = `
+    const htmlDetalleCurso = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -97,11 +104,11 @@ function mostrarDetalleCurso() {
             <h1>Detalle de Curso</h1>
             <section id="columna-detalle-curso">
                 <article id="imagen-titulo-descripcion-curso">
-                    <img src="img/clase-js.png" alt="image-del-curso">
+                    <img src="${curso.imagen}" alt="image-del-curso">
                     <div class="contenido-titulo-curso-precio-tiempo-descripcion">
-                        <h2>Javascript Fundamentals</h2>
-                        <p>Precio: <span class="precio-curso">US$30</span> </p>
-                        <p>Tiempo de dedicacion necesario: <span class="precio-curso">40hs</span> </p>
+                        <h2>${curso.titulo}</h2>
+                        <p>Precio: <span class="precio-curso">${curso.precio}</span> </p>
+                        <p>Tiempo de dedicacion necesario: <span class="precio-curso">${curso.duracion}</span> </p>
                         <p>Descripcion del curso:</p>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim at dolor, 
                                 cumque corrupti id libero repellat natus consectetur ducimus, 
@@ -190,6 +197,8 @@ function mostrarDetalleCurso() {
     </html>
     `;
     
-    // Asigna el contenido generado al contenedor
-    cursoDetalleContainer.innerHTML = contenidoCursoDetalle;
+    // Abre una nueva ventana o pestaña y carga el HTML
+    const nuevaVentana = window.open("URL_DE_DESTINO", "_blank");
+    nuevaVentana.document.write(htmlDetalleCurso);
+    nuevaVentana.document.close();
   }
