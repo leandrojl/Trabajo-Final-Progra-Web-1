@@ -121,7 +121,8 @@ h1{
     
     
 }
-.contenedor-instrucciones h2{
+#contenedor-instrucciones-h2{
+    margin: 40px;
     grid-row: 1;
     color: black;
     text-align: center;
@@ -130,17 +131,16 @@ h1{
 .contenedor-instrucciones ol{
     grid-row: 2;
     display: grid;
-    gap: 10px;
+    gap: 50px;
     grid-template-columns: auto auto auto;
     list-style: none;
 }
-.contenedor-instrucciones ol li{
+.box-instrucciones{
     box-sizing: border-box;
-    border: 2px solid black;
-    background-color: red;
+    text-align: justify;
     
 }
-.contenedor-instrucciones ol li p{
+.box-instrucciones-texto{
     color: black;
     font-weight: bold;
     font-size: 17px;
@@ -169,17 +169,17 @@ h1{
     
 }
 @media (max-width: 1155px) {
-    .contenido-cursos-destacados ul {
+    #contenedor-cursos-destacados {
       grid-template-columns: repeat(4, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
     }
   }
   @media (max-width: 983px) {
-    .contenido-cursos-destacados ul {
+    #contenedor-cursos-destacados {
       grid-template-columns: repeat(3, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
     }
   }
 @media (max-width: 822px) {
-    .contenido-cursos-destacados ul {
+    #contenedor-cursos-destacados {
       grid-template-columns: repeat(2, 1fr); /* En pantallas más pequeñas, establece 2 columnas de igual tamaño */
     }
   }
