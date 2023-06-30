@@ -612,5 +612,41 @@ h1{
         border-radius: 5px;
         border: none; 
 }
+#contenedor-calendario{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#calendario {
+    font-family: Arial, sans-serif;
+  }
+  
+  #calendario table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #calendario th,
+  #calendario td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  #calendario th {
+    background-color: #6c63ff;
+    color: #fff;
+  }
+  
+  #calendario td {
+    cursor: pointer;
+  }
+  
+  #calendario td:hover {
+    background-color: #6c63ff;
+    color: #fff;
+  }
 
 

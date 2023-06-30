@@ -16,9 +16,9 @@
         <nav>
             <img id="logo" src="img/logo-world.jfif" alt="logo">
             <form>
-                <input type="text" placeholder="Buscar...">
-                <button type="submit">Buscar</button>
-            </form>  
+                <input id="inputBusqueda" type="text" placeholder="Buscar">
+                <!-- <button class="estilo-boton-busqueda" type="submit">Buscar</button> -->
+            </form> 
             <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -29,6 +29,7 @@
         </nav>
     </header>
     <main>
+        <div id="resultadoBusqueda" ></div>
         <h1>Gift Cards</h1>
         <section class="contenedor-imagen-article">
             <div id="contenedor-personalizado">
@@ -80,7 +81,7 @@
                     <input type="color" id="color-fondo" name="color">
                 </li>
                 <li>
-                    <button id="boton-confirmar-gift-card">CONFIRMAR</button>
+                    <button class="estilo-boton" id="boton-confirmar-gift-card">CONFIRMAR</button>
                 </li>
             </ul>
             </article>

@@ -16,8 +16,8 @@
         <nav>
             <img id="logo" src="img/logo-world.jfif" alt="logo">
             <form>
-                <input type="text" placeholder="Buscar...">
-                <button type="submit">Buscar</button>
+                <input id="inputBusqueda" type="text" placeholder="Buscar">
+                <!-- <button class="estilo-boton-busqueda" type="submit">Buscar</button> -->
             </form>  
             <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
             <ul> 
@@ -29,11 +29,16 @@
         </nav> 
     </header>   
     <main>
+        <div id="resultadoBusqueda" ></div>
         <h1>Calendario</h1>
         <!-- <div class="imagen-container-calendario">
             <img id="calendario" src="img/calendario-imagen.jpg" alt="clase-java">
         </div> -->
-        <div id="calendario"></div>
+        <div id="contenedor-calendario">
+
+            <div id="calendario"></div>
+        </div>
+        
     </main>
     <footer>
             <ul>
