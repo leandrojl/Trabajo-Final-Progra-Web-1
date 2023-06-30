@@ -44,10 +44,17 @@ function buscarCursos(cursos, busqueda) {
     imagenCurso.src = curso.imagen;
     var nombreCurso = document.createElement("p");
     nombreCurso.textContent = curso.titulo;
+    var button = document.createElement('button');
+    button.textContent = 'Ver mas';
+    button.className = 'estilo-boton-busqueda';
+    button.addEventListener("click", function(){
+        mostrarDetalleCurso(curso);
+    })
 
     // Agregar los elementos al div del curso
     cursoDiv.appendChild(imagenCurso);
     cursoDiv.appendChild(nombreCurso);
+    cursoDiv.appendChild(button);
 
     // Agregar el div del curso al contenedor de resultados de búsqueda
     resultadoBusqueda.appendChild(cursoDiv);

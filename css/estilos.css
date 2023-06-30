@@ -51,7 +51,7 @@ nav ul{
     grid-column: 1 / 5;
     background-color: #000;
     color: white;
-    border-bottom: 3px solid #F64C72;
+    border-bottom: 5px solid #F64C72;
     padding: 10px;
 }
 nav li{
@@ -83,7 +83,7 @@ footer{
     justify-content: space-around;
     background-color: black;
     color: white;
-    border-top: 3px solid #F64C72;
+    border-top: 5px solid #F64C72;
 }
 footer ul{
     margin-top: 10px;
@@ -111,6 +111,14 @@ h1{
 /*ESTILOS PARA CONTENIDO INDEX.HTML*********************************************************************************************************/
 /*CONTENEDOR INSTRUCCIONES*/
 
+#inputBusqueda{
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
 
 #resultadoBusqueda {
     display: flex;
@@ -125,7 +133,7 @@ h1{
   }
   
   .curso img {
-    width: 50px;
+    width: 100px;
     height: auto;
     margin-bottom: 10px;
   }
@@ -133,6 +141,19 @@ h1{
   .curso p {
     margin-bottom: 0;
   }
+.estilo-boton-busqueda{
+        background-color: #F64C72;
+        color: white;
+        margin-top: 5px;
+        padding: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;  
+}
+
 .row{
     display: flex; /*REGLAS PARA EL CAROUSEL DE BOOTSTRAP*/
     justify-content: center;
@@ -588,12 +609,15 @@ h1{
 /*FIN ESTILOS CONTACTO.HTML*********************************************************************************************************/
 
 .estilo-boton{
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 12px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+    background-color: #F64C72;
+        color: white;
+        padding: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none; 
 }
 
 
