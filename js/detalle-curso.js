@@ -113,7 +113,7 @@ function mostrarDetalleCurso(curso, curso_id) {
                                 cumque corrupti id libero repellat natus consectetur ducimus, 
                                 tenetur iste velit in unde? Doloribus et minus nemo sint tempora!</p>
                                 <p>Requisitos previos: <span class="precio-curso">Ninguno</span></p>
-                        <button id="botonInscribirCurso" class="estilo-boton"><a href="#">Inscribirse</a></button>
+                        <button id="botonInscribirCurso" class="estilo-boton">Inscribirse</button>
                     </div>
                     </article>
                     <div class="contenido-curso-unidades">

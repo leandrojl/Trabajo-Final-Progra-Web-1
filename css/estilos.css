@@ -261,7 +261,7 @@ h1{
   }
 .contenido-cursos-destacados button a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 .precio-curso{
@@ -366,14 +366,7 @@ h1{
     box-sizing: border-box;
     margin-bottom: 10px;
 }
-.contenido-titulo-curso-precio-tiempo-descripcion a{
-    box-sizing: border-box;
-    padding: 20px;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
+
 .contenido-curso-unidades{
     width: 100%;
     display: grid;
@@ -492,7 +485,7 @@ h1{
     padding: 5px;  
 }
 .contenedor-imagen-article button{
-    color: black;
+    color: white;
     font-weight: bold;
     padding: 10px;
 }
@@ -609,7 +602,7 @@ h1{
 /*FIN ESTILOS CONTACTO.HTML*********************************************************************************************************/
 
 .estilo-boton{
-    background-color: #F64C72;
+        background-color: #F64C72;
         color: white;
         padding: 5px;
         font-size: 14px;
