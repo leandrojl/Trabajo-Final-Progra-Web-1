@@ -110,6 +110,29 @@ h1{
 }
 /*ESTILOS PARA CONTENIDO INDEX.HTML*********************************************************************************************************/
 /*CONTENEDOR INSTRUCCIONES*/
+
+
+#resultadoBusqueda {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  
+  .curso {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .curso img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .curso p {
+    margin-bottom: 0;
+  }
 .row{
     display: flex; /*REGLAS PARA EL CAROUSEL DE BOOTSTRAP*/
     justify-content: center;
