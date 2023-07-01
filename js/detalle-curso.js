@@ -54,11 +54,15 @@ function mostrarCursos(cursos) {
 }
 
 function mostrarDetalleCurso(curso, curso_id) {
+    
+    document.body.innerHTML = htmlDetalleCurso;
+    window.location.href = '../detalle-curso.html';
 
     
     // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
     const htmlDetalleCurso = `
-    <!DOCTYPE html>
+    
+       <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -95,7 +99,7 @@ function mostrarDetalleCurso(curso, curso_id) {
             <div class="modal-content">
               <span class="close">&times;</span>
               <h2>Felicitaciones!</h2>
-              <p>Te has inscrito en el evento:</p>
+              <p>Te has inscrito en el curso:</p>
               <p id="eventoTitulo">Titulo: ${curso.titulo}</p>
               <p id="eventoPrecio">Precio: ${curso.precio}</p>
               <p id="eventoDuracion">${curso.duracion}</p>
@@ -191,12 +195,16 @@ function mostrarDetalleCurso(curso, curso_id) {
             <script src="js/detalle-curso.js"></script>
            </body>
     </html>
-    `;
     
-    // Abre una nueva ventana o pestaña y carga el HTML
-    const nuevaVentana = window.open("URL_DE_DESTINO", "_blank");
-    nuevaVentana.document.write(htmlDetalleCurso);
-    nuevaVentana.document.close();
+           
+    `;
+
+    
+    
+    // // Abre una nueva ventana o pestaña y carga el HTML
+    // const nuevaVentana = window.open("URL_DE_DESTINO", "_blank");
+    // nuevaVentana.document.write(htmlDetalleCurso);
+    // nuevaVentana.document.close();
   }
 
 //LOGICA DEL MODAL
