@@ -3,13 +3,63 @@ fetch('../json/cursos.json')
   .then(data => {
     const cursos = data.cursos;
     const instrucciones = data.instrucciones;
-    
+
     mostrarCursos(cursos);
     mostrarInstrucciones(instrucciones);
+
+    var inputBusqueda = document.getElementById("inputBusqueda");
+    inputBusqueda.addEventListener("input", function() {
+      var busqueda = inputBusqueda.value.trim(); // Obtener el valor del campo de búsqueda y eliminar espacios en blanco al inicio y al final
+
+      if (busqueda === "") {
+        resultadoBusqueda.innerHTML = ""; // Si la búsqueda está vacía, vaciar el contenedor de resultados
+      } else {
+        buscarCursos(cursos, busqueda);
+      }
+    });
   })
   .catch(error => {
     console.log('Error:', error);
   });
+
+var resultadoBusqueda = document.getElementById("resultadoBusqueda");
+
+// Función para buscar cursos y mostrar los resultados
+function buscarCursos(cursos, busqueda) {
+  // Limpiar el contenedor de resultados de búsqueda
+  resultadoBusqueda.innerHTML = "";
+
+  // Filtrar los cursos según la búsqueda
+  var cursosFiltrados = cursos.filter(function(curso) {
+    return curso.titulo.toLowerCase().includes(busqueda.toLowerCase());
+  });
+
+  // Mostrar los resultados
+  cursosFiltrados.forEach(function(curso) {
+    // Crear un elemento div con la clase "curso" para mostrar la imagen y el nombre del curso
+    var cursoDiv = document.createElement("div");
+    cursoDiv.classList.add("curso"); // Agregar la clase "curso" al div
+
+    var imagenCurso = document.createElement("img");
+    imagenCurso.src = curso.imagen;
+    var nombreCurso = document.createElement("p");
+    nombreCurso.textContent = curso.titulo;
+    var button = document.createElement('button');
+    button.textContent = 'Ver mas';
+    button.className = 'estilo-boton-busqueda';
+    button.addEventListener("click", function(){
+        mostrarDetalleCurso(curso);
+    })
+
+    // Agregar los elementos al div del curso
+    cursoDiv.appendChild(imagenCurso);
+    cursoDiv.appendChild(nombreCurso);
+    cursoDiv.appendChild(button);
+
+    // Agregar el div del curso al contenedor de resultados de búsqueda
+    resultadoBusqueda.appendChild(cursoDiv);
+  });
+}
 
 function mostrarInstrucciones(instrucciones){
     const contenedorInstrucciones = document.getElementById("contenedor-instrucciones-ol");
