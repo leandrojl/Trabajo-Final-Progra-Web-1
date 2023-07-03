@@ -657,3 +657,24 @@ h1{
     
   }
 
+  #contador-cursos {
+    font-weight: bold;
+    color: #ff0000;
+  }
+
+  #contador-compra-cursos{
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    border-radius: 5px;
+    display: inline-block;
+    }
+
+    #contador-cursos {
+    font-weight: bold;
+    color: #ff0000;
+    }
+
+

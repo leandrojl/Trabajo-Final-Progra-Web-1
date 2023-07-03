@@ -289,3 +289,33 @@ function mostrarDetalleCurso(curso) {
   nuevaVentana.document.write(htmlDetalleCurso);
   nuevaVentana.document.close();
 }
+
+const contador = document.getElementById('contador-cursos');
+
+function cargarContadorDeCursos(){
+    
+    if (sessionStorage.getItem('contadorCursos')) {
+    // Obtener el valor almacenado en el sessionStorage
+    contador.textContent = sessionStorage.getItem('contadorCursos');
+  } else {
+    // Si no hay un contador almacenado, iniciar en 0
+    contador.textContent = '0';
+  }
+}
+window.onload =  cargarContadorDeCursos;
+
+
+function comprarCurso(curso){
+
+    let valorActual = parseInt(contador.textContent);
+
+  // Incrementar el valor del contador
+  valorActual++;
+
+  // Actualizar el contador en la página
+  contador.textContent = valorActual;
+
+  // Almacenar el valor actualizado en el sessionStorage
+  sessionStorage.setItem('contadorCursos', valorActual);
+
+}
