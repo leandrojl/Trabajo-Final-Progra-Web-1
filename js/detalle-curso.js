@@ -55,8 +55,6 @@ function mostrarCursos(cursos) {
 
 function mostrarDetalleCurso(curso) {
 
-    
-  // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
   const htmlDetalleCurso = `
   <!DOCTYPE html>
   <html lang="en">
@@ -195,13 +193,11 @@ function mostrarDetalleCurso(curso) {
   </html>
   `;
   
-  // Abre una nueva ventana o pestaña y carga el HTML
   const nuevaVentana = window.open(`../detalle-curso.html#${curso.id}`, "_blank");
   nuevaVentana.document.write(htmlDetalleCurso);
   nuevaVentana.document.close();
 }
 
-//LOGICA DEL MODAL
 const btnInscribirse = document.getElementById('botonInscribirCurso');
 const modal = document.getElementById('modal');
 const spanClose = document.getElementsByClassName('close')[0];
@@ -220,7 +216,7 @@ function cerrarModal() {
 
 btnInscribirse.addEventListener('click', function() {
   mostrarModal();
-  window.open('formulario.html', '_blank'); // Abrir formulario en una nueva ventana o pestaña
+  window.open('formulario.html', '_blank'); 
 });
 
 spanClose.addEventListener('click', cerrarModal);
@@ -230,10 +226,10 @@ const contador = document.getElementById('contador-cursos');
 function cargarContadorDeCursos(){
     
     if (sessionStorage.getItem('contadorCursos')) {
-    // Obtener el valor almacenado en el sessionStorage
+
     contador.textContent = sessionStorage.getItem('contadorCursos');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
+
     contador.textContent = '0';
   }
 }
@@ -243,10 +239,10 @@ const contadorCursosInscripcion = document.getElementById('contador-cursos-inscr
 function cargarContadorDeCursosInscriptos(){
     
     if (sessionStorage.getItem('contadorCursosInscripcion')) {
-    // Obtener el valor almacenado en el sessionStorage
+
     contadorCursosInscripcion.textContent = sessionStorage.getItem('contadorCursosInscripcion');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
+
     contadorCursosInscripcion.textContent = '0';
   }
 }
@@ -257,13 +253,10 @@ botonInscribirAlCurso.addEventListener("click", ()=>{
 
   let valorActual = parseInt(contadorCursosInscripcion.textContent);
 
-  // Incrementar el valor del contador
   valorActual++;
 
-  // Actualizar el contador en la página
   contadorCursosInscripcion.textContent = valorActual;
 
-  // Almacenar el valor actualizado en el sessionStorage
   sessionStorage.setItem('contadorCursosInscripcion', valorActual);
 
 })
@@ -272,13 +265,10 @@ function comprarCurso(curso){
 
   let valorActual = parseInt(contador.textContent);
 
-// Incrementar el valor del contador
 valorActual++;
 
-// Actualizar el contador en la página
 contador.textContent = valorActual;
 
-// Almacenar el valor actualizado en el sessionStorage
 sessionStorage.setItem('contadorCursos', valorActual);
 
 }

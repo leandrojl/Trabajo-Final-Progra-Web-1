@@ -8,7 +8,6 @@ class FormularioInscripcionAUnCurso {
       this.telefono = '';
       this.mensajeError = '';
     }
-  
     obtenerDatos() {
       this.nombre = document.getElementById('nombre-formulario-ingreso-curso').value;
       this.apellido = document.getElementById('apellido-formulario-ingreso-curso').value;
@@ -17,7 +16,6 @@ class FormularioInscripcionAUnCurso {
       this.telefono = document.getElementById('telefono-formulario-ingreso-curso').value;
       this.mensajeError = document.querySelector('#mensajeErrorFormulario');
     }
-  
     validarDatos(){
         let error = false;
         let mensaje = '';
@@ -53,7 +51,6 @@ class FormularioInscripcionAUnCurso {
             mensaje+="<p>El campo telefono no puede estar vacio</p>";
         }
         if(error){
-            //mostrar errores
             this.mensajeError.innerHTML = mensaje;
             return false;
     
@@ -86,9 +83,9 @@ class FormularioInscripcionAUnCurso {
 const miFormulario = new FormularioInscripcionAUnCurso();
   
 document.querySelector('.formulario-ingreso-curso').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
-    miFormulario.obtenerDatos(); // Obtener los datos del formulario
-    miFormulario.enviarDatos(); // Enviar los datos del formulario
+    event.preventDefault(); 
+    miFormulario.obtenerDatos(); 
+    miFormulario.enviarDatos(); 
 });
 
 
@@ -97,15 +94,11 @@ fetch('../json/cursos.json')
   .then(data => {
     const cursos = data.cursos;
     const instrucciones = data.instrucciones;
-
-   
-
     var inputBusqueda = document.getElementById("inputBusqueda");
     inputBusqueda.addEventListener("input", function() {
-      var busqueda = inputBusqueda.value.trim(); // Obtener el valor del campo de búsqueda y eliminar espacios en blanco al inicio y al final
-
+      var busqueda = inputBusqueda.value.trim(); 
       if (busqueda === "") {
-        resultadoBusqueda.innerHTML = ""; // Si la búsqueda está vacía, vaciar el contenedor de resultados
+        resultadoBusqueda.innerHTML = ""; 
       } else {
         buscarCursos(cursos, busqueda);
       }
@@ -117,21 +110,15 @@ fetch('../json/cursos.json')
 
 var resultadoBusqueda = document.getElementById("resultadoBusqueda");
 
-// Función para buscar cursos y mostrar los resultados
 function buscarCursos(cursos, busqueda) {
-  // Limpiar el contenedor de resultados de búsqueda
   resultadoBusqueda.innerHTML = "";
-
-  // Filtrar los cursos según la búsqueda
   var cursosFiltrados = cursos.filter(function(curso) {
     return curso.titulo.toLowerCase().includes(busqueda.toLowerCase());
   });
 
-  // Mostrar los resultados
   cursosFiltrados.forEach(function(curso) {
-    // Crear un elemento div con la clase "curso" para mostrar la imagen y el nombre del curso
     var cursoDiv = document.createElement("div");
-    cursoDiv.classList.add("curso"); // Agregar la clase "curso" al div
+    cursoDiv.classList.add("curso"); 
 
     var imagenCurso = document.createElement("img");
     imagenCurso.src = curso.imagen;
@@ -143,20 +130,13 @@ function buscarCursos(cursos, busqueda) {
     button.addEventListener("click", function(){
         mostrarDetalleCurso(curso);
     })
-
-    // Agregar los elementos al div del curso
     cursoDiv.appendChild(imagenCurso);
     cursoDiv.appendChild(nombreCurso);
     cursoDiv.appendChild(button);
-
-    // Agregar el div del curso al contenedor de resultados de búsqueda
     resultadoBusqueda.appendChild(cursoDiv);
   });
 }
 function mostrarDetalleCurso(curso) {
-
-    
-  // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
   const htmlDetalleCurso = `
   <!DOCTYPE html>
   <html lang="en">
@@ -293,7 +273,6 @@ function mostrarDetalleCurso(curso) {
   </html>
   `;
   
-  // Abre una nueva ventana o pestaña y carga el HTML
   const nuevaVentana = window.open("URL_DE_DESTINO", "_blank");
   nuevaVentana.document.write(htmlDetalleCurso);
   nuevaVentana.document.close();
@@ -304,10 +283,8 @@ const contador = document.getElementById('contador-cursos');
 function cargarContadorDeCursos(){
     
     if (sessionStorage.getItem('contadorCursos')) {
-    // Obtener el valor almacenado en el sessionStorage
     contador.textContent = sessionStorage.getItem('contadorCursos');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
     contador.textContent = '0';
   }
 }
@@ -317,10 +294,8 @@ const contadorCursosInscripcion = document.getElementById('contador-cursos-inscr
 function cargarContadorDeCursosInscriptos(){
     
     if (sessionStorage.getItem('contadorCursosInscripcion')) {
-    // Obtener el valor almacenado en el sessionStorage
     contadorCursosInscripcion.textContent = sessionStorage.getItem('contadorCursosInscripcion');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
     contadorCursosInscripcion.textContent = '0';
   }
 }

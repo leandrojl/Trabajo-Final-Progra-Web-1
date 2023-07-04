@@ -17,7 +17,6 @@
             <img id="logo" src="img/logo-world.jfif" alt="logo">
             <form>
                 <input id="inputBusqueda" type="text" placeholder="Buscar">
-                <!-- <button class="estilo-boton-busqueda" type="submit">Buscar</button> -->
             </form>
             <div id="contadores">
                 <p id="contador-compra-cursos">Cursos en Compra: <span id="contador-cursos"></span></p>
@@ -36,7 +35,7 @@
         <div id="resultadoBusqueda" ></div>
         <h1>Gift Cards</h1>
         <section class="contenedor-imagen-article">
-            <div id="contenedor-personalizado">
+            <div class="contenedor-personalizado-centro" id="contenedor-personalizado-id">
                 <h3 id="titulo-gift-card">Titulo gift card</h3>
                 <p id="monto-gift-card">Monto</p>
                 <span id="fecha-hora-gift-card"></span>
@@ -74,20 +73,17 @@
                     </select>
                 </li>
                 <form id="form-posicion-gift-card">
-                    <input type="radio" id="opcion1" name="opciones" value="opcion1">
-                    <label for="opcion1">Izquierda</label><br>
-                    <input type="radio" id="opcion2" name="opciones" value="opcion2">
+                    <input type="radio" id="opcion1" name="opciones" value="arriba">
+                    <label for="opcion1">Arriba</label><br>
+                    <input type="radio" id="opcion2" name="opciones" value="centro">
                     <label for="opcion2">Centro</label><br>
-                    <input type="radio" id="opcion3" name="opciones" value="opcion3">
-                    <label for="opcion3">Derecha</label><br>
+                    <input type="radio" id="opcion3" name="opciones" value="abajo">
+                    <label for="opcion3">Abajo</label><br>
                   </form>
                 <li>
                     <label for="monto">Monto:</label>
                     <input id="monto" name="monto">
                 </li>
-                <!-- <li>
-                    <p>Ubicacion de monto:</p>
-                </li> -->
                 <li>
                     <label for="color">Selecciona un color de fondo:</label>
                     <input type="color" id="color-fondo" name="color">

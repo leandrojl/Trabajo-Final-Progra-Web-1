@@ -8,10 +8,9 @@ fetch('../json/cursos.json')
 
     var inputBusqueda = document.getElementById("inputBusqueda");
     inputBusqueda.addEventListener("input", function() {
-      var busqueda = inputBusqueda.value.trim(); // Obtener el valor del campo de búsqueda y eliminar espacios en blanco al inicio y al final
-
+      var busqueda = inputBusqueda.value.trim(); 
       if (busqueda === "") {
-        resultadoBusqueda.innerHTML = ""; // Si la búsqueda está vacía, vaciar el contenedor de resultados
+        resultadoBusqueda.innerHTML = ""; 
       } else {
         buscarCursos(cursos, busqueda);
       }
@@ -23,21 +22,21 @@ fetch('../json/cursos.json')
 
 var resultadoBusqueda = document.getElementById("resultadoBusqueda");
 
-// Función para buscar cursos y mostrar los resultados
+
 function buscarCursos(cursos, busqueda) {
-  // Limpiar el contenedor de resultados de búsqueda
+  
   resultadoBusqueda.innerHTML = "";
 
-  // Filtrar los cursos según la búsqueda
+  
   var cursosFiltrados = cursos.filter(function(curso) {
     return curso.titulo.toLowerCase().includes(busqueda.toLowerCase());
   });
 
-  // Mostrar los resultados
+  
   cursosFiltrados.forEach(function(curso) {
-    // Crear un elemento div con la clase "curso" para mostrar la imagen y el nombre del curso
+    
     var cursoDiv = document.createElement("div");
-    cursoDiv.classList.add("curso"); // Agregar la clase "curso" al div
+    cursoDiv.classList.add("curso"); 
 
     var imagenCurso = document.createElement("img");
     imagenCurso.src = curso.imagen;
@@ -50,19 +49,17 @@ function buscarCursos(cursos, busqueda) {
         mostrarDetalleCurso(curso);
     })
 
-    // Agregar los elementos al div del curso
+    
     cursoDiv.appendChild(imagenCurso);
     cursoDiv.appendChild(nombreCurso);
     cursoDiv.appendChild(button);
 
-    // Agregar el div del curso al contenedor de resultados de búsqueda
+    
     resultadoBusqueda.appendChild(cursoDiv);
   });
 }
 function mostrarDetalleCurso(curso) {
 
-    
-  // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
   const htmlDetalleCurso = `
   <!DOCTYPE html>
   <html lang="en">
@@ -198,8 +195,7 @@ function mostrarDetalleCurso(curso) {
          </body>
   </html>
   `;
-  
-  // Abre una nueva ventana o pestaña y carga el HTML
+
   const nuevaVentana = window.open("URL_DE_DESTINO", "_blank");
   nuevaVentana.document.write(htmlDetalleCurso);
   nuevaVentana.document.close();
@@ -210,10 +206,10 @@ const contador = document.getElementById('contador-cursos');
 function cargarContadorDeCursos(){
     
     if (sessionStorage.getItem('contadorCursos')) {
-    // Obtener el valor almacenado en el sessionStorage
+
     contador.textContent = sessionStorage.getItem('contadorCursos');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
+
     contador.textContent = '0';
   }
 }
@@ -224,13 +220,10 @@ function comprarCurso(curso){
 
     let valorActual = parseInt(contador.textContent);
 
-  // Incrementar el valor del contador
   valorActual++;
 
-  // Actualizar el contador en la página
   contador.textContent = valorActual;
 
-  // Almacenar el valor actualizado en el sessionStorage
   sessionStorage.setItem('contadorCursos', valorActual);
 
 }

@@ -1,5 +1,4 @@
 class GiftCard {
-
     constructor() {
       this.inputTitulo = '';
       this.inputFechaHora = '';
@@ -11,7 +10,6 @@ class GiftCard {
       this.tituloGiftCard = '';
       this.montoGiftCard = '';
     }
-  
     obtenerDatos() {
       this.inputTitulo = document.getElementById('titulo').value;
       this.inputFechaHora = document.getElementById('fecha-hora').value;
@@ -23,18 +21,14 @@ class GiftCard {
       this.tituloGiftCard = document.getElementById('titulo-gift-card').value;
       this.montoGiftCard = document.getElementById('monto-gift-card').value;
     }
-  
     actualizarTitulo() {
       const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
       tituloPrevisualizacion.textContent = this.inputTitulo;
-
     }
-
     actualizarFechaYHora() {
         const fechaPrevisualizacion = document.querySelector('#fecha-hora-gift-card');
         fechaPrevisualizacion.textContent = this.inputFechaHora;
       }
-
     actualizarColorLetra() {
         const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
         const montoPrevisualizacion = document.querySelector('#monto-gift-card');
@@ -43,7 +37,6 @@ class GiftCard {
         montoPrevisualizacion.style.color = this.inputColorLetra;
         fechaPrevisualizacion.style.color = this.inputColorLetra;
       }
-  
     actualizarTamanioLetra() {
       const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
       const montoPrevisualizacion = document.querySelector('#monto-gift-card');
@@ -52,7 +45,6 @@ class GiftCard {
       montoPrevisualizacion.style.fontSize = this.inputTamanioLetra+ 'px';
       fechaPrevisualizacion.style.fontSize = this.inputTamanioLetra+ 'px';
     }
-
     actualizarFuente() {
       const tituloPrevisualizacion = document.querySelector('#titulo-gift-card');
       const montoPrevisualizacion = document.querySelector('#monto-gift-card');
@@ -61,77 +53,61 @@ class GiftCard {
       montoPrevisualizacion.style.fontFamily = this.inputFuente;
       fechaPrevisualizacion.style.fontFamily = this.inputFuente;
     }
-  
     actualizarMonto() {
       const montoPrevisualizacion = document.querySelector('#monto-gift-card');
       montoPrevisualizacion.textContent = `$${this.inputMonto}`;
     }
-  
     actualizarColorFondo() {
-      const contenedorPrevisualizacion = document.querySelector('#contenedor-personalizado');
+      const contenedorPrevisualizacion = document.querySelector('#contenedor-personalizado-id');
       contenedorPrevisualizacion.style.backgroundColor = this.inputColorFondo;
     }
   }
-
   const giftCard = new GiftCard();
-
   const tituloInput = document.getElementById('titulo');
   tituloInput.addEventListener('input', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarTitulo();
 });
-
 const fechaHoraInput = document.getElementById('fecha-hora');
-
 fechaHoraInput.addEventListener('change', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarFechaYHora();
 });
-
 const colorLetra = document.getElementById('color-letra');
   colorLetra.addEventListener('input', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarColorLetra();
 });
-
 const tamanioLetra = document.getElementById('tamanio-letra');
   tamanioLetra.addEventListener('input', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarTamanioLetra();
 });
-
 const tipoFuente = document.getElementById('fuente');
   tipoFuente.addEventListener('change', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarFuente();
 });
-
 const montoEnGiftCard = document.getElementById('monto');
   montoEnGiftCard.addEventListener('input', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarMonto();
 });
-
 const colorFondo = document.getElementById('color-fondo');
   colorFondo.addEventListener('input', () => {
   giftCard.obtenerDatos();
   giftCard.actualizarColorFondo();
 });
-
 fetch('../json/cursos.json')
   .then(response => response.json())
   .then(data => {
     const cursos = data.cursos;
     const instrucciones = data.instrucciones;
-
-   
-
     var inputBusqueda = document.getElementById("inputBusqueda");
     inputBusqueda.addEventListener("input", function() {
-      var busqueda = inputBusqueda.value.trim(); // Obtener el valor del campo de búsqueda y eliminar espacios en blanco al inicio y al final
-
+      var busqueda = inputBusqueda.value.trim(); 
       if (busqueda === "") {
-        resultadoBusqueda.innerHTML = ""; // Si la búsqueda está vacía, vaciar el contenedor de resultados
+        resultadoBusqueda.innerHTML = ""; 
       } else {
         buscarCursos(cursos, busqueda);
       }
@@ -142,23 +118,14 @@ fetch('../json/cursos.json')
   });
 
 var resultadoBusqueda = document.getElementById("resultadoBusqueda");
-
-// Función para buscar cursos y mostrar los resultados
 function buscarCursos(cursos, busqueda) {
-  // Limpiar el contenedor de resultados de búsqueda
   resultadoBusqueda.innerHTML = "";
-
-  // Filtrar los cursos según la búsqueda
   var cursosFiltrados = cursos.filter(function(curso) {
     return curso.titulo.toLowerCase().includes(busqueda.toLowerCase());
   });
-
-  // Mostrar los resultados
   cursosFiltrados.forEach(function(curso) {
-    // Crear un elemento div con la clase "curso" para mostrar la imagen y el nombre del curso
     var cursoDiv = document.createElement("div");
-    cursoDiv.classList.add("curso"); // Agregar la clase "curso" al div
-
+    cursoDiv.classList.add("curso"); 
     var imagenCurso = document.createElement("img");
     imagenCurso.src = curso.imagen;
     var nombreCurso = document.createElement("p");
@@ -169,20 +136,13 @@ function buscarCursos(cursos, busqueda) {
     button.addEventListener("click", function(){
         mostrarDetalleCurso(curso);
     })
-
-    // Agregar los elementos al div del curso
     cursoDiv.appendChild(imagenCurso);
     cursoDiv.appendChild(nombreCurso);
     cursoDiv.appendChild(button);
-
-    // Agregar el div del curso al contenedor de resultados de búsqueda
     resultadoBusqueda.appendChild(cursoDiv);
   });
 }
 function mostrarDetalleCurso(curso) {
-
-    
-  // Aquí puedes generar dinámicamente el contenido HTML para la página del curso
   const htmlDetalleCurso = `
   <!DOCTYPE html>
   <html lang="en">
@@ -318,40 +278,42 @@ function mostrarDetalleCurso(curso) {
          </body>
   </html>
   `;
-  
-  // Abre una nueva ventana o pestaña y carga el HTML
   const nuevaVentana = window.open("URL_DE_DESTINO", "_blank");
   nuevaVentana.document.write(htmlDetalleCurso);
   nuevaVentana.document.close();
 }
-
 const contador = document.getElementById('contador-cursos');
-
 function cargarContadorDeCursos(){
-    
     if (sessionStorage.getItem('contadorCursos')) {
-    // Obtener el valor almacenado en el sessionStorage
     contador.textContent = sessionStorage.getItem('contadorCursos');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
     contador.textContent = '0';
   }
 }
-
 const contadorCursosInscripcion = document.getElementById('contador-cursos-inscripcion');
-
-function cargarContadorDeCursosInscriptos(){
-    
+function cargarContadorDeCursosInscriptos(){  
     if (sessionStorage.getItem('contadorCursosInscripcion')) {
-    // Obtener el valor almacenado en el sessionStorage
     contadorCursosInscripcion.textContent = sessionStorage.getItem('contadorCursosInscripcion');
   } else {
-    // Si no hay un contador almacenado, iniciar en 0
     contadorCursosInscripcion.textContent = '0';
   }
 }
-
 window.addEventListener("load", (event) => {
   cargarContadorDeCursosInscriptos();
   cargarContadorDeCursos();
 });
+
+var posicionRadioInputs = document.getElementsByName('opciones');
+var palabraParaModificar = document.querySelector('.contenedor-personalizado-centro');
+for (var i = 0; i < posicionRadioInputs.length; i++) {
+    posicionRadioInputs[i].addEventListener('change', function() {
+    
+    
+    var posicionSeleccionada = this.value;
+    palabraParaModificar.className = "contenedor-personalizado-"+ posicionSeleccionada;
+  
+
+    
+    
+    });
+}
