@@ -661,6 +661,19 @@ h1{
     font-weight: bold;
     color: #ff0000;
   }
+  #contenedor-contador-inscripcion-cursos{
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  #contador-cursos-inscripcion{
+    font-weight: bold;
+    color: #ff0000;
+  }
 
   #contador-compra-cursos{
     font-size: 16px;

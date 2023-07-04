@@ -132,23 +132,42 @@ function cargarContadorDeCursos(){
     contador.textContent = '0';
   }
 }
-window.onload =  cargarContadorDeCursos;
+const contadorCursosInscripcion = document.getElementById('contador-cursos-inscripcion');
 
+function cargarContadorDeCursosInscriptos(){
+    
+    if (sessionStorage.getItem('contadorCursosInscripcion')) {
+    // Obtener el valor almacenado en el sessionStorage
+    contadorCursosInscripcion.textContent = sessionStorage.getItem('contadorCursosInscripcion');
+  } else {
+    // Si no hay un contador almacenado, iniciar en 0
+    contadorCursosInscripcion.textContent = '0';
+  }
+}
 
 function comprarCurso(curso){
 
-    let valorActual = parseInt(contador.textContent);
+  let valorActual = parseInt(contador.textContent);
 
-  // Incrementar el valor del contador
-  valorActual++;
+// Incrementar el valor del contador
+valorActual++;
 
-  // Actualizar el contador en la página
-  contador.textContent = valorActual;
+// Actualizar el contador en la página
+contador.textContent = valorActual;
 
-  // Almacenar el valor actualizado en el sessionStorage
-  sessionStorage.setItem('contadorCursos', valorActual);
+// Almacenar el valor actualizado en el sessionStorage
+sessionStorage.setItem('contadorCursos', valorActual);
 
 }
+
+window.addEventListener("load", (event) => {
+  cargarContadorDeCursosInscriptos();
+  cargarContadorDeCursos();
+});
+
+
+
+
 
 function mostrarDetalleCurso(curso) {
 
@@ -173,10 +192,13 @@ function mostrarDetalleCurso(curso) {
             <nav>
                 <img id="logo" src="img/logo-world.jfif" alt="logo">
                 <form>
-                    <input type="text" placeholder="Buscar...">
-                    <button type="submit">Buscar</button>
+                    <input id="inputBusqueda" type="text" placeholder="Buscar">
+                    
                 </form>
-                <p>Carrito Compras: <span id="contador-cursos"></span></p>                
+                <div id="contadores">
+                <p id="contador-compra-cursos">Cursos en Compra: <span id="contador-cursos"></span></p>
+                <p id="contenedor-contador-inscripcion-cursos">Cursos Inscripto: <span id="contador-cursos-inscripcion"></span></p>
+                </div>
                 <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
                 <ul>  
                     <li><a href="index.html">Inicio</a></li>

@@ -337,20 +337,21 @@ function cargarContadorDeCursos(){
     contador.textContent = '0';
   }
 }
-window.onload =  cargarContadorDeCursos;
 
+const contadorCursosInscripcion = document.getElementById('contador-cursos-inscripcion');
 
-function comprarCurso(curso){
-
-    let valorActual = parseInt(contador.textContent);
-
-  // Incrementar el valor del contador
-  valorActual++;
-
-  // Actualizar el contador en la página
-  contador.textContent = valorActual;
-
-  // Almacenar el valor actualizado en el sessionStorage
-  sessionStorage.setItem('contadorCursos', valorActual);
-
+function cargarContadorDeCursosInscriptos(){
+    
+    if (sessionStorage.getItem('contadorCursosInscripcion')) {
+    // Obtener el valor almacenado en el sessionStorage
+    contadorCursosInscripcion.textContent = sessionStorage.getItem('contadorCursosInscripcion');
+  } else {
+    // Si no hay un contador almacenado, iniciar en 0
+    contadorCursosInscripcion.textContent = '0';
+  }
 }
+
+window.addEventListener("load", (event) => {
+  cargarContadorDeCursosInscriptos();
+  cargarContadorDeCursos();
+});
