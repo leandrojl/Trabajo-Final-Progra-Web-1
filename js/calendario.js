@@ -1,88 +1,3 @@
-
-// Obtener referencia al div del calendario
-var calendarioDiv = document.getElementById("calendario");
-
-// Crear objeto de fecha actual
-var fechaActual = new Date();
-
-// Obtener mes y año actual
-var mesActual = fechaActual.getMonth();
-var anioActual = fechaActual.getFullYear();
-
-// Renderizar calendario
-renderizarCalendario(mesActual, anioActual);
-
-// Función para renderizar el calendario en el div correspondiente
-function renderizarCalendario(mes, anio) {
-  // Obtener el primer día del mes
-  var primerDia = new Date(anio, mes, 1);
-  // Obtener el número de días en el mes
-  var numDiasMes = new Date(anio, mes + 1, 0).getDate();
-
-  // Crear la tabla del calendario
-  var tablaCalendario = document.createElement("table");
-
-  // Crear encabezado de días de la semana
-  var filaEncabezado = document.createElement("tr");
-  var diasSemana = ["D", "L", "M", "M", "J", "V", "S"];
-
-  for (var i = 0; i < diasSemana.length; i++) {
-    var celda = document.createElement("th");
-    celda.textContent = diasSemana[i];
-    filaEncabezado.appendChild(celda);
-  }
-
-  tablaCalendario.appendChild(filaEncabezado);
-
-  // Calcular la posición de inicio en la tabla
-  var posicionInicio = primerDia.getDay();
-
-  // Calcular el número total de celdas en la tabla
-  var numTotalCeldas = 42; // 6 filas x 7 columnas
-
-  // Calcular el número total de semanas en el mes
-  var numSemanas = Math.ceil((posicionInicio + numDiasMes) / 7);
-
-  // Crear las celdas del calendario
-  var dia = 1;
-  for (var fila = 0; fila < numSemanas; fila++) {
-    var filaCalendario = document.createElement("tr");
-
-    for (var col = 0; col < 7; col++) {
-      var celda = document.createElement("td");
-
-      if (fila === 0 && col < posicionInicio) {
-        // Celdas vacías antes del primer día del mes
-        celda.classList.add("vacia");
-      } else if (dia > numDiasMes) {
-        // Celdas vacías después del último día del mes
-        celda.classList.add("vacia");
-      } else {
-        // Celdas con números de día
-        celda.textContent = dia;
-
-        if (
-          dia === fechaActual.getDate() &&
-          mes === fechaActual.getMonth() &&
-          anio === fechaActual.getFullYear()
-        ) {
-          // Estilo para resaltar el día actual
-          celda.classList.add("hoy");
-        }
-
-        dia++;
-      }
-
-      filaCalendario.appendChild(celda);
-    }
-
-    tablaCalendario.appendChild(filaCalendario);
-  }
-
-  calendarioDiv.innerHTML = "";
-  calendarioDiv.appendChild(tablaCalendario);
-}
-
 fetch('../json/cursos.json')
   .then(response => response.json())
   .then(data => {
@@ -319,3 +234,11 @@ function comprarCurso(curso){
   sessionStorage.setItem('contadorCursos', valorActual);
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendario');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth'
+  });
+  calendar.render();
+});
