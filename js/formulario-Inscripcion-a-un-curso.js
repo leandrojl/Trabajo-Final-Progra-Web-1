@@ -330,5 +330,5 @@ window.addEventListener("load", (event) => {
   cargarContadorDeCursos();
 });
 
-  
+
 

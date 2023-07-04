@@ -528,6 +528,10 @@ h1{
 #mensajeErrorFormulario{
     color: red;
 }
+#contenedor-formulario{
+    display: flex;
+    flex-direction: row;
+}
 
 /*FIN ESTILOS FORMULARIO.HTML*********************************************************************************************************/
 

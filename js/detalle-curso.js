@@ -220,6 +220,7 @@ function cerrarModal() {
 
 btnInscribirse.addEventListener('click', function() {
   mostrarModal();
+  window.open('formulario.html', '_blank'); // Abrir formulario en una nueva ventana o pestaña
 });
 
 spanClose.addEventListener('click', cerrarModal);
