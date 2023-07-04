@@ -236,9 +236,29 @@ function comprarCurso(curso){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendario');
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth'
-  });
-  calendar.render();
+  fetch('../json/cursos.json')
+    .then(response => response.json())
+    .then(data => {
+      var cursos = data.cursos;
+      
+      var eventos = [];
+      for (var i = 0; i < cursos.length; i++) {
+        var curso = cursos[i];
+        var evento = {
+          title: curso.titulo,
+          start: curso.fecha
+        };
+        eventos.push(evento);
+      }
+      
+      var calendarEl = document.getElementById('calendario');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: eventos
+      });
+      calendar.render();
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
 });

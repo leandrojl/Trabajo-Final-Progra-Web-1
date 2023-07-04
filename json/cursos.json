@@ -6,6 +6,7 @@
             "titulo": "NodeJS Avanzado",
             "duracion": "Duración: 90hs",
             "precio": "US$ 320",
+            "fecha": "2023-07-16",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -20,6 +21,7 @@
             "titulo": "Java Fundamentals",
             "duracion": "Duración: 12hs",
             "precio": "US$ 320",
+            "fecha": "2023-07-17",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -34,6 +36,7 @@
             "titulo": "FullStack Javascript",
             "duracion": "Duración: 240hs",
             "precio": "US$ 400",
+            "fecha": "2023-07-18",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -48,6 +51,7 @@
             "titulo": "Python Fundamentals",
             "duracion": "Duración: 12hs",
             "precio": "US$ 20",
+            "fecha": "2023-07-19",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -62,6 +66,7 @@
             "titulo": "Front End ",
             "duracion": "Duración: 48hs",
             "precio": "US$ 120",
+            "fecha": "2023-07-20",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -76,6 +81,7 @@
             "titulo": "C++ Intermedio",
             "duracion": "Duración: 72hs",
             "precio": "US$ 200",
+            "fecha": "2023-07-21",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -90,6 +96,7 @@
             "titulo": "JS Fundamentals",
             "duracion": "Duración: 120hs",
             "precio": "US$ 30",
+            "fecha": "2023-07-22",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -104,6 +111,7 @@
             "titulo": "React Avanzado",
             "duracion": "Duración: 100hs",
             "precio": "US$ 220",
+            "fecha": "2023-07-23",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -118,6 +126,7 @@
             "titulo": "PHP Intermedio",
             "duracion": "Duración: 30hs",
             "precio": "US$ 100",
+            "fecha": "2023-07-24",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
@@ -132,6 +141,7 @@
             "titulo": "MySQL Completo",
             "duracion": "Duración: 130hs",
             "precio": "US$ 420",
+            "fecha": "2023-07-25",
             "docente": {
                 "imagen": "img/humberto_flores.jpg",
                 "nombre": "Humberto",
