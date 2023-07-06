@@ -34,19 +34,14 @@ function mostrarCursos(cursos) {
     button.addEventListener("click", function(){
         mostrarDetalleCurso(curso, curso.id);
     })
-    const buttonComprar = document.createElement('button');
-    buttonComprar.textContent = 'Comprar';
-    buttonComprar.className = 'estilo-boton';
-    buttonComprar.addEventListener('click', function(){
-        comprarCurso(curso)
-    })
+    
 
     imagenContainer.appendChild(imagen);
     li.appendChild(imagenContainer);
     li.appendChild(h3);
     li.appendChild(duracion);
     li.appendChild(precio);
-    li.appendChild(buttonComprar);
+
     li.appendChild(button);
     cursosContainer.appendChild(li);
     
@@ -81,12 +76,13 @@ function mostrarDetalleCurso(curso) {
               <p id="contenedor-contador-inscripcion-cursos">Cursos Inscripto: <span id="contador-cursos-inscripcion"></span></p>
               </div>
               <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
-              <ul>  
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a  href="calendario.html">Calendario</a></li>
-                  <li><a  href="gift-card.html">Gift Card</a></li>
-                  <li><a  href="contacto.html">Contacto</a></li>  
-               </ul>   
+              <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a  href="calendario.html">Calendario</a></li>
+                <li><a  href="formulario.html">Formulario</a></li>
+                <li><a href="gift-card.html">Gift Card</a></li>
+                <li><a  href="contacto.html">Contacto</a></li>  
+             </ul>  
           </nav> 
       </header>
       <main>

@@ -207,12 +207,13 @@ function mostrarDetalleCurso(curso) {
               </form>
               <p>Carrito Compras: <span id="contador-cursos"></span></p>                
               <img id="carrito" src="img/carro-de-la-carretilla.png" alt="carrito">
-              <ul>  
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a  href="calendario.html">Calendario</a></li>
-                  <li><a  href="gift-card.html">Gift Card</a></li>
-                  <li><a  href="contacto.html">Contacto</a></li>  
-               </ul>   
+              <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a  href="calendario.html">Calendario</a></li>
+                <li><a  href="formulario.html">Formulario</a></li>
+                <li><a href="gift-card.html">Gift Card</a></li>
+                <li><a  href="contacto.html">Contacto</a></li>  
+             </ul>  
           </nav> 
       </header>
       <main>

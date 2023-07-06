@@ -26,35 +26,41 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a  href="calendario.html">Calendario</a></li>
-                <li><a  href="gift-card.html">Gift Card</a></li>
+                <li><a  href="formulario.html">Formulario</a></li>
+                <li><a href="gift-card.html">Gift Card</a></li>
                 <li><a  href="contacto.html">Contacto</a></li>  
-             </ul>   
+             </ul>  
         </nav>
     </header> 
     <main>
         <div id="resultadoBusqueda" ></div>
         <h1>Formulario</h1>
         <section>
-            <div id="contenedor-botones-agregar-borrar-formulario">
-                <button id="agregar-formulario-inscripcion">Agregar formulario</button>
-                <p>Monto:<span id="monto-total-inscripcion-curso"></span></p>
-                <button id="borrar-formulario-inscripcion">Borrar formulario</button>
-            </div>
             <div id="contenedor-formularios">
                 <form class="formulario-ingreso-curso">
                     <div class="ingreso-datos-persona">
+                    
                     <label for="nombre-formulario-ingreso-curso">Nombre:</label>
                     <input type="text" id="nombre-formulario-ingreso-curso" name="nombre-formulario-ingreso-curso" >
+                    
                     <label for="apellido-formulario-ingreso-curso">Apellido:</label>
                     <input type="text" id="apellido-formulario-ingreso-curso" name="apellido-formulario-ingreso-curso" >
+                    
                     <label for="dni-formulario-ingreso-curso">DNI:</label>
                     <input type="text" id="dni-formulario-ingreso-curso" name="dni-formulario-ingreso-curso" >
+                    
+                    <label for="curso-formulario-ingreso-curso">Curso: </label>
+                    <input type="text" id="curso-formulario-ingreso-curso" name="curso-formulario-ingreso-curso" >
+                    
                     <label for="email-formulario-ingreso-curso">Email:</label>
                     <input type="text" id="email-formulario-ingreso-curso" name="email-formulario-ingreso-curso" >
+                    
                     <label for="telefono-formulario-ingreso-curso">Telefono:</label>
                     <input type="text" id="telefono-formulario-ingreso-curso" name="telefono-formulario-ingreso-curso" >
+                    
                     <input type="submit" value="Enviar">
                     <a href="index.html" id="mensajeErrorFormulario"></a>
+                    <div id="consulta-form-enviada-inscripcion"></div>
                     
                     </div> 
             </form>

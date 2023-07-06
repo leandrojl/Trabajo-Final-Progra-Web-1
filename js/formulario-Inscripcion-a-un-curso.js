@@ -6,6 +6,7 @@ class FormularioInscripcionAUnCurso {
       this.dni = '';
       this.email = '';
       this.telefono = '';
+      this.curso = '';
       this.mensajeError = '';
     }
     obtenerDatos() {
@@ -14,6 +15,7 @@ class FormularioInscripcionAUnCurso {
       this.dni = document.getElementById('dni-formulario-ingreso-curso').value;
       this.email = document.getElementById('email-formulario-ingreso-curso').value;
       this.telefono = document.getElementById('telefono-formulario-ingreso-curso').value;
+      this.curso = document.getElementById('curso-formulario-ingreso-curso').value;
       this.mensajeError = document.querySelector('#mensajeErrorFormulario');
     }
     validarDatos(){
@@ -50,6 +52,10 @@ class FormularioInscripcionAUnCurso {
             error=true;
             mensaje+="<p>El campo telefono no puede estar vacio</p>";
         }
+        if(this.curso == ""){
+          error=true;
+          mensaje+="<p>El campo curso no puede estar vacio</p>";
+        }
         if(error){
             this.mensajeError.innerHTML = mensaje;
             return false;
@@ -72,7 +78,15 @@ class FormularioInscripcionAUnCurso {
         console.log('DNI:', this.dni);
         console.log('Email:', this.email);
         console.log('Teléfono:', this.telefono);
+        console.log('Curso:', this.curso);
         console.log("formulario enviado");
+        var consulta = document.getElementById("consulta-form-enviada-inscripcion");
+        consulta.textContent = "Inscripcion enviada exitosamente!";
+        var volverInicio = document.createElement("a");
+        volverInicio.className = "estilo-boton";
+        volverInicio.text = "Aceptar";
+        volverInicio.href = "/index.html";
+        consulta.appendChild(volverInicio);
         document.querySelector('.formulario-ingreso-curso').reset();
         this.mensajeError.innerHTML = '';
       }
