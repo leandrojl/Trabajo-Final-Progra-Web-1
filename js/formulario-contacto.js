@@ -85,6 +85,14 @@ class FormularioContacto {
         console.log('Teléfono:', this.telefono);
         console.log('Consulta', this.consulta);
         console.log("formulario enviado");
+        var consulta = document.getElementById("consulta-form-enviada");
+        consulta.textContent = "Consulta enviada exitosamente!";
+        var volverInicio = document.createElement("a");
+        volverInicio.className = "estilo-boton";
+        volverInicio.text = "Aceptar";
+        volverInicio.href = "/index.html";
+        consulta.appendChild(volverInicio);
+
         document.querySelector('.formulario-contacto').reset();
         this.mensajeError.innerHTML = '';
       }
@@ -121,7 +129,6 @@ class FormularioContacto {
   .then(response => response.json())
   .then(data => {
     const cursos = data.cursos;
-    const instrucciones = data.instrucciones;
     var inputBusqueda = document.getElementById("inputBusqueda");
     inputBusqueda.addEventListener("input", function() {
       var busqueda = inputBusqueda.value.trim(); 

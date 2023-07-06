@@ -83,7 +83,8 @@ function mostrarCursos(cursos) {
     buttonComprar.textContent = 'Comprar';
     buttonComprar.className = 'estilo-boton';
     buttonComprar.addEventListener('click', function(){
-        comprarCurso(curso)
+        comprarCurso(curso);
+        comprarCursoAlCarrito(curso);
     })
 
     imagenContainer.appendChild(imagen);
@@ -97,6 +98,7 @@ function mostrarCursos(cursos) {
   });
 }
 const contador = document.getElementById('contador-cursos');
+
 function cargarContadorDeCursos(){  
     if (sessionStorage.getItem('contadorCursos')) {
     contador.textContent = sessionStorage.getItem('contadorCursos');
@@ -114,14 +116,11 @@ function cargarContadorDeCursosInscriptos(){
 }
 function comprarCurso(curso){
   let valorActual = parseInt(contador.textContent);
-valorActual++;
-contador.textContent = valorActual;
-sessionStorage.setItem('contadorCursos', valorActual);
+  valorActual++;
+  contador.textContent = valorActual;
+  sessionStorage.setItem('contadorCursos', valorActual);
 }
-window.addEventListener("load", (event) => {
-  cargarContadorDeCursosInscriptos();
-  cargarContadorDeCursos();
-});
+
 function mostrarDetalleCurso(curso) {
     const htmlDetalleCurso = `
     <!DOCTYPE html>
@@ -266,4 +265,39 @@ function mostrarDetalleCurso(curso) {
     nuevaVentana.document.close();
   }
 
+  function comprarCursoAlCarrito(curso) {
+    const carritoContainer = document.querySelector('#contenedor-carrito');
+    
+    const cursoEnCarrito = document.createElement('div');
+    cursoEnCarrito.className = 'curso-en-carrito';
+  
+  
+    const imagen = document.createElement('img');
+    imagen.src = curso.imagen;
+    imagen.alt = curso.titulo;
+  
+   
+    const titulo = document.createElement('h4');
+    titulo.textContent = curso.titulo;
+  
+   
+    cursoEnCarrito.appendChild(imagen);
+    cursoEnCarrito.appendChild(titulo);
+  
+    
+    carritoContainer.appendChild(cursoEnCarrito);
+  }
 
+  const botonMostrarCarrito = document.getElementById('boton-mostrar-carrito');
+  const carritoCompras = document.querySelector('.carrito-compras-oculto');
+  
+  botonMostrarCarrito.addEventListener('click', function() {
+    carritoCompras.classList.toggle("carrito-compras-oculto");
+    carritoCompras.classList.toggle("carrito-compras");
+  });
+
+  window.addEventListener("load", (event) => {
+    cargarContadorDeCursosInscriptos();
+    cargarContadorDeCursos();
+  });
+  

@@ -215,8 +215,7 @@ function cerrarModal() {
 }
 
 btnInscribirse.addEventListener('click', function() {
-  mostrarModal();
-  window.open('formulario.html', '_blank'); 
+  mostrarModal(); 
 });
 
 spanClose.addEventListener('click', cerrarModal);

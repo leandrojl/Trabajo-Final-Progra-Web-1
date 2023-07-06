@@ -105,9 +105,39 @@ h1{
     font-weight: bold;
     padding: 50px;
     font-family: 'Comfortaa';
+    border-radius: 10px;
 }
 /*ESTILOS PARA CONTENIDO INDEX.HTML*********************************************************************************************************/
 /*CONTENEDOR INSTRUCCIONES*/
+.carrito-compras{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #F64C72;  
+}
+.carrito-compras-oculto{
+    display: none;
+}
+.curso-en-carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 5px;
+}
+.curso-en-carrito h4{
+    margin: 4px;
+    font-size: 14px;
+}
+.curso-en-carrito img{
+    width: 100px;
+    height: auto;
+    
+}
 
 #inputBusqueda{
   margin-right: 10px;
@@ -517,6 +547,14 @@ h1{
 /*FIN ESTILOS FORMULARIO.HTML*********************************************************************************************************/
 
 /*PRINCIPIO ESTILOS CONTACTO.HTML*********************************************************************************************************/
+#consulta-form-enviada{
+    
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .contenedor-contacto{
     display: flex;
     flex-direction: column;
